@@ -6,12 +6,12 @@ import { buildConfig } from 'payload'
 import { fileURLToPath } from 'url'
 import sharp from 'sharp'
 
-import { Users } from './collections/Users'
-import { Media } from './collections/Media'
-import { Universities } from './collections/Universities'
-import Services from './collections/Services'
-import CostTable from './collections/CostTable'
-import Reviews from './collections/Reviews'
+import { Users } from './collections/Users.ts'
+import { Media } from './collections/Media.ts'
+import { Universities } from './collections/Universities.ts'
+import Services from './collections/Services.ts'
+import CostTable from './collections/CostTable.ts'
+import Reviews from './collections/Reviews.ts'
 
 
 
