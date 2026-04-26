@@ -1,5 +1,4 @@
-export const dynamic = 'force-dynamic';
-export const revalide = 60;
+export const revalidate = 60;
 import { getPayload } from 'payload'
 import configPromise from '@payload-config'
 import Navbar from "@/components/layout/Navbar";

@@ -8,7 +8,6 @@ import HeroImage from "@/assets/hero_img.png";
 const Hero: React.FC = () => {
   return (
     <section
-      id="hero"
       className="relative flex flex-col md:flex-row md:items-center justify-center gap-10 md:gap-30 px-4 md:px-16 lg:px-24 xl:px-32 
                  bg-[image:var(--bg-mobile)] md:bg-[image:var(--bg-desktop)]
                  bg-cover bg-center md:bg-no-repeat"
