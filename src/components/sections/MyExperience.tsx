@@ -76,7 +76,7 @@ const ExperienceSection: React.FC = () => {
           variants={fadeInDown}
           className="relative z-10 mb-8 md:mb-5 flex items-center gap-5"
         >
-          <h2 className="font-[family-name:var(--font-mm9)] text-5xl md:text-8xl font-serif text-[#636024]">
+          <h2 className="font-[family-name:var(--font-mm9)] text-5xl md:text-8xl text-[#636024]">
             Мой опыт!
           </h2>
 

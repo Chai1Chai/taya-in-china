@@ -50,7 +50,7 @@ const Cities = () => {
       </div>
 
       <div className="z-20 max-w-5xl mx-auto">
-        <h2 className="font-[family-name:var(--font-montserrat)] text-3xl md:text-6xl font-base text-center mb-5 text-[#636024]">
+        <h2 className="font-[family-name:var(--font-montserrat)] text-4xl md:text-6xl font-base text-center mb-5 text-[#636024]">
           Города поступления
         </h2>
 

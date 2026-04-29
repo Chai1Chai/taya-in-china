@@ -12,11 +12,11 @@ const ContactBlock = () => {
   return (
     <section className="font-[family-name:var(--font-montserrat)] w-full flex justify-center py-10 px-4 md:px-16 lg:px-24 xl:px-32 relative overflow-hidden">
       <div className="absolute -top-50 md:-top-80 -left-55 w-100 h-100 md:w-160 md:h-160 pointer-events-none">
-        <Image src={Ornament} alt="" fill className="object-containt" />
+        <Image src={Ornament} alt="" fill className="object-contain" />
       </div>
 
       <div className="absolute -bottom-50 md:-bottom-90 -right-55 w-100 h-100 md:w-160 md:h-160 pointer-events-none">
-        <Image src={Ornament} alt="" fill className="object-containt" />
+        <Image src={Ornament} alt="" fill className="object-contain" />
       </div>
 
       <div className="z-10 max-w-6xl w-full flex flex-col md:flex-row items-center md:items-start justify-center gap-20 px-4">
@@ -29,14 +29,14 @@ const ContactBlock = () => {
         </div>
 
         <div className="relative order-1 md:order-2 bg-[#EEE9CB] rounded-[30px] px-8 py-10 w-full max-w-md text-center">
-          <img
-            src={fish01.src}
+          <Image
+            src={fish01}
             alt="fish"
             className="absolute hidden md:block md:-top-5 md:-left-15 md:w-60"
           />
 
-          <img
-            src={fish02.src}
+          <Image
+            src={fish02}
             alt="fish"
             className="absolute hidden md:block md:-top-12 md:-right-20 w-20 md:w-45"
           />
@@ -61,7 +61,7 @@ const ContactBlock = () => {
                 alt="tg"
                 className="absolute left-6 w-5 invert brightness-0"
               />
-              <span>Написать в Telegram</span>
+              <span className="pl-5 text-sm md:text-base">Написать в Telegram</span>
             </a>
 
             <a
@@ -75,7 +75,7 @@ const ContactBlock = () => {
                 alt="vk"
                 className="absolute left-6 w-5 invert brightness-0"
               />
-              <span>Написать в VK</span>
+              <span className="text-sm md:text-base pl-1">Написать в VK</span>
             </a>
           </div>
 

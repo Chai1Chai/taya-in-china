@@ -73,7 +73,7 @@ const FAQ = () => {
       }}
     >
       <div className="mx-auto max-w-7xl">
-        <h2 className="font-[family-name:var(--font-mm9)] text-white text-3xl md:text-6xl font-medium text-center mb-16">
+        <h2 className="font-[family-name:var(--font-mm9)] text-white text-4xl md:text-8xl font-medium text-center mb-16">
           Часто задаваемые вопросы
         </h2>
 

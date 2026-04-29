@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence, Variants, TargetAndTransition } from "framer-motion"; 
+import Image from "next/image";
 
 import LeftFlower from "@/assets/LeftFlower.svg";
 import RightFlower from "@/assets/RightFlower.svg";
@@ -79,8 +80,21 @@ const Services = ({ data }: { data: ServiceItem[] }) => {
   return (
     <section className="relative bg-[#FCFDED] px-4 md:px-16 lg:px-24 xl:px-32 py-20 overflow-hidden">
 
-      <img src={LeftFlower.src} className="absolute left-0 bottom-0 w-60 z-0" alt="" />
-      <img src={RightFlower.src} className="absolute right-0 bottom-0 w-60 z-0" alt="" />
+      <div className="absolute left-0 bottom-0 w-60 h-auto z-0 pointer-events-none">
+        <Image 
+          src={LeftFlower} 
+          alt="" 
+          className="w-full h-auto object-contain bg-transparent" 
+        />
+      </div>
+
+      <div className="absolute right-0 bottom-0 w-60 h-auto z-0 pointer-events-none">
+        <Image 
+          src={RightFlower} 
+          alt="" 
+          className="w-full h-auto object-contain bg-transparent" 
+        />
+      </div>
 
       <div className="max-w-6xl mx-auto relative z-10">
 
