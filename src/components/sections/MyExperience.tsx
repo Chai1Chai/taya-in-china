@@ -76,12 +76,12 @@ const ExperienceSection: React.FC = () => {
           variants={fadeInDown}
           className="relative z-10 mb-8 md:mb-5 flex items-center gap-5"
         >
-          <h2 className="font-[family-name:var(--font-mm9)] text-5xl md:text-8xl text-[#636024]">
+          <h2 className="font-[family-name:var(--font-mm9)] text-5xl md:text-8xl text-[#636024] text-center md:text-left">
             МОЙ ОПЫТ!
           </h2>
 
           <div
-            className="w-12 h-12 md:w-20 md:h-20 bg-[#636024]"
+            className="hidden md:block w-12 h-12 md:w-20 md:h-20 bg-[#636024]"
             style={{
               maskImage: `url(${lanterngreen.src})`,
               WebkitMaskImage: `url(${lanterngreen.src})`,
