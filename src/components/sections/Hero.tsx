@@ -1,9 +1,10 @@
 "use client";
 import React, { CSSProperties } from "react";
 import Image from "next/image";
-import HeroBackground from "@/assets/Hero_Background.png";
-import MobileHeroBackground from "@/assets/MobileHero_Background.png";
-import HeroImage from "@/assets/hero_img.png";
+import HeroBackground from "@/assets/Hero_Background.webp";
+import MobileHeroBackground from "@/assets/MobileHero_Background.webp";
+import HeroImage from "@/assets/hero_img.webp";
+
 
 const Hero: React.FC = () => {
   return (
@@ -30,12 +31,15 @@ const Hero: React.FC = () => {
           программы до зачисления.
         </p>
         
-        <Image
-          src={HeroImage} 
-          alt="Консультация по поступлению в университеты Китая"
-          priority
-          className="block md:hidden w-full h-auto max-w-xs sm:max-w-sm lg:max-w-md transition-all duration-300 mb-5"
-        />
+        {/* МОБИЛЬНАЯ ВЕРСИЯ ИЗОБРАЖЕНИЯ С ОБВОДКОЙ */}
+        <div className="block md:hidden w-full max-w-xs sm:max-w-sm border-[1.5px] border-[#636024] rounded-[40px] p-3 sm:p-5 mb-5 box-border">
+          <Image
+            src={HeroImage} 
+            alt="Консультация по поступлению в университеты Китая"
+            priority
+            className="w-full h-auto rounded-[24px]"
+          />
+        </div>
 
         <a
           href="#contact-block"
@@ -45,12 +49,15 @@ const Hero: React.FC = () => {
         </a>
       </div>
 
-      <Image
-        src={HeroImage} 
-        alt="Студент получает образование в Китае" 
-        priority
-        className="hidden md:block w-full h-auto max-w-xs sm:max-w-sm lg:max-w-md transition-all duration-300 md:mt-30"
-      />
+      {/* ДЕСКТОПНАЯ ВЕРСИЯ ИЗОБРАЖЕНИЯ С ОБВОДКОЙ */}
+      <div className="hidden md:block w-full max-w-xs sm:max-w-sm lg:max-w-md border-[1.5px] border-[#636024] rounded-[40px] p-3 md:mt-30 box-border">
+        <Image
+          src={HeroImage} 
+          alt="Консультация по поступлению в университеты Китая" 
+          priority
+          className="w-full h-auto rounded-[30px] transition-all duration-300"
+        />
+      </div>
     </section>
   );
 };

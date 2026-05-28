@@ -50,8 +50,8 @@ const Cities = () => {
       </div>
 
       <div className="z-20 max-w-5xl mx-auto">
-        <h2 className="font-[family-name:var(--font-montserrat)] text-4xl md:text-6xl font-base text-center mb-5 text-[#636024]">
-          Города поступления
+        <h2 className="font-[family-name:var(--font-mm9)] text-4xl md:text-6xl font-base text-center mb-5 text-[#636024]">
+          ГОРОДА ПОСТУПЛЕНИЯ
         </h2>
 
         <div className="md:hidden mb-8 relative z-20">

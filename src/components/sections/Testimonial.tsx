@@ -1,9 +1,8 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import { createPortal } from "react-dom"; // Добавили стандартный портал React
 import Image from "next/image";
-import BackgroundCard from "@/assets/Blocks/blockTestimonial.svg";
-import MobilebackgroundCard from "@/assets/Blocks/MobileblockTestimonial.svg";
 import Ornament from "@/assets/ornament.svg";
 import { motion, AnimatePresence } from "framer-motion";
 import GreenFlowerIcon from "@/assets/greenflower.svg";
@@ -20,13 +19,34 @@ const Testimonial = ({ data }: { data: ReviewFromPayload[] }) => {
   const [currentIndex, setCurrentIndex] = useState<number>(0);
   const [selectedReview, setSelectedReview] = useState<ReviewFromPayload | null>(null);
   const [isDesktop, setIsDesktop] = useState(false);
+  const [mounted, setMounted] = useState(false); 
+
 
   useEffect(() => {
+    setMounted(true);
     const handleResize = () => setIsDesktop(window.innerWidth >= 768);
     handleResize();
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
+
+
+  useEffect(() => {
+    if (selectedReview) {
+      const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+      document.body.style.overflow = "hidden";
+      document.body.style.paddingRight = `${scrollbarWidth}px`;
+    } else {
+      document.body.style.overflow = "";
+      document.body.style.paddingRight = "";
+    }
+
+    return () => {
+      document.body.style.overflow = "";
+      document.body.style.paddingRight = "";
+    };
+  }, [selectedReview]);
+
 
   const reviewsData = data || [];
   const categories = [
@@ -67,12 +87,12 @@ const Testimonial = ({ data }: { data: ReviewFromPayload[] }) => {
   return (
     <section className="relative w-full overflow-hidden">
       {/* Ornament */}
-      <div className="absolute -bottom-50 md:-bottom-80 -left-55 w-100 h-100 md:w-160 md:h-160 pointer-events-none">
+      <div className="absolute -bottom-50 md:-bottom-80 -left-55 w-100 h-100 md:w-160 md:h-160 pointer-events-none z-0">
         <Image src={Ornament} alt="" fill className="object-contain" />
       </div>
 
-      <div className="py-16 px-4 max-w-8xl w-full md:px-16 lg:px-24 xl:px-32 mx-auto relative overflow-hidden">
-        <h2 className="font-[family-name:var(--font-mm9)] text-6xl md:text-8xl text-[#5E0F08] mb-10">
+      <div className="py-16 px-4 max-w-8xl w-full md:px-16 lg:px-24 xl:px-32 mx-auto relative overflow-hidden z-10">
+        <h2 className="font-[family-name:var(--font-mm9)] uppercase text-6xl md:text-8xl text-[#5E0F08] mb-10">
           Отзывы
         </h2>
 
@@ -98,13 +118,13 @@ const Testimonial = ({ data }: { data: ReviewFromPayload[] }) => {
             <>
               <button
                 onClick={prevSlide}
-                className="absolute -left-2 md:-left-1 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full border border-[#636024] text-[#636024] bg-white/90 flex items-center justify-center hover:bg-[#636024] hover:text-white transition-all shadow-md"
+                className="absolute -left-2 md:-left-1 top-1/2 -translate-y-1/2 z-30 w-10 h-10 rounded-full border border-[#636024] text-[#636024] bg-white/90 flex items-center justify-center hover:bg-[#636024] hover:text-white transition-all shadow-md"
               >
                 ❮
               </button>
               <button
                 onClick={nextSlide}
-                className="absolute -right-2 md:-right-1 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full border border-[#636024] text-[#636024] bg-white/90 flex items-center justify-center hover:bg-[#636024] hover:text-white transition-all shadow-md"
+                className="absolute -right-2 md:-right-1 top-1/2 -translate-y-1/2 z-30 w-10 h-10 rounded-full border border-[#636024] text-[#636024] bg-white/90 flex items-center justify-center hover:bg-[#636024] hover:text-white transition-all shadow-md"
               >
                 ❯
               </button>
@@ -119,33 +139,25 @@ const Testimonial = ({ data }: { data: ReviewFromPayload[] }) => {
               }}
             >
               {filteredReviews.map((review) => (
-                <div
-                  key={review.id}
-                  onClick={() => setSelectedReview(review)}
-                  className="min-w-full md:min-w-[calc(50%-12px)] h-auto min-h-[280px] md:h-[320px] relative cursor-pointer flex items-center justify-center p-8 md:p-14"
-                >
-                  <Image
-                    src={BackgroundCard}
-                    alt=""
-                    fill
-                    className="hidden md:block -z-10 object-stretch"
-                  />
-                  <Image
-                    src={MobilebackgroundCard}
-                    alt=""
-                    fill
-                    className="block md:hidden -z-10 object-stretch"
-                  />
-
-                  <div className="w-full text-start px-4 z-10">
-                    <h3 className="text-[#5C1616] font-semibold text-base md:text-lg uppercase tracking-wider break-words">
-                      {review.category}
-                    </h3>
-                    <div className="h-[1px] bg-[#8B1D1D] w-full my-4 opacity-60" />
-                    <p className="text-[#5C1616]/90 text-base md:text-lg line-clamp-4 leading-relaxed">
-                      {review.text}
-                    </p>
+                <div key={review.id} className="min-w-full md:min-w-[calc(50%-12px)] h-auto p-2">
+                  
+                  <div 
+                    onClick={() => setSelectedReview(review)}
+                    className="relative cursor-pointer min-h-[280px] md:min-h-[320px] flex items-center justify-center p-6 sm:p-8 md:p-10 lg:p-12 bg-[#FCFDED] border-2 border-[#636024]/30 rounded-2xl shadow-sm hover:shadow-md hover:border-[#636024]/60 transition-all duration-300"
+                  >
+                    <div className="absolute inset-1.5 border border-[#636024]/10 rounded-xl pointer-events-none" />
+                    
+                    <div className="w-full text-start z-10">
+                      <h3 className="text-[#5C1616] font-semibold text-base md:text-lg uppercase tracking-wider break-words pr-2">
+                        {review.category}
+                      </h3>
+                      <div className="h-[1px] bg-[#8B1D1D] w-full my-3 opacity-60" />
+                      <p className="text-[#5C1616]/90 text-base md:text-lg line-clamp-4 leading-relaxed">
+                        {review.text}
+                      </p>
+                    </div>
                   </div>
+
                 </div>
               ))}
             </div>
@@ -191,70 +203,78 @@ const Testimonial = ({ data }: { data: ReviewFromPayload[] }) => {
             })}
           </div>
         )}
-
-        {selectedReview && (
-          <div
-            className="fixed inset-0 bg-black/65 z-[100] flex items-center justify-center p-4 backdrop-blur-md transition-opacity"
-            onClick={() => setSelectedReview(null)}
-          >
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95, y: 15 }}
-              animate={{ opacity: 1, scale: 1, y: 0 }}
-              exit={{ opacity: 0, scale: 0.95, y: 15 }}
-              className="max-w-2xl w-full h-auto min-h-[30vh] max-h-[85vh] md:max-h-[80vh] relative bg-[#FDFCF6] rounded-2xl border border-[#8B1D1D]/25 shadow-2xl flex flex-col overflow-hidden overflow-x-hidden"
-              onClick={(e) => e.stopPropagation()}
-            >
-              <button
-                className="absolute top-5 right-6 text-2xl text-[#8B1D1D] opacity-60 hover:opacity-100 hover:rotate-90 transition-all z-[110] w-8 h-8 flex items-center justify-center"
-                onClick={() => setSelectedReview(null)}
-              >
-                ✕
-              </button>
-        
-              <div className="p-7 md:p-10 pb-2 md:pb-4 bg-[#FDFCF6] z-10">
-                <h3 className="text-[#5C1616] font-bold text-xl md:text-2xl pr-12 leading-snug">
-                  {selectedReview.category}
-                </h3>
-                <div className="h-[2px] bg-[#8B1D1D] w-14 mt-4 opacity-75" />
-              </div>
-        
-              <div 
-                className="flex-1 overflow-y-auto px-7 md:px-10 pb-10 custom-modal-scroll relative z-20 overflow-x-hidden"
-                style={{
-                  scrollbarWidth: 'thin',
-                  scrollbarColor: '#8B1D1D rgba(139, 29, 29, 0.1)'
-                }}
-              >
-                <p className="text-[#5C1616] leading-relaxed text-base md:text-lg italic whitespace-pre-line relative z-30 w-full">
-                  «{selectedReview.text}»
-                </p>
-
-                <div className="absolute bottom-2 right-2 w-48 h-48 pointer-events-none opacity-[0.05] z-0 rotate-[-15deg]">
-                   <Image src={Ornament} alt="" fill className="object-contain" />
-                </div>
-              </div>
-            </motion.div>
-              
-            <style jsx global>{`
-              /* Оставляем только красивый вертикальный скролл */
-              .custom-modal-scroll::-webkit-scrollbar {
-                width: 5px;
-              }
-              .custom-modal-scroll::-webkit-scrollbar-track {
-                background: transparent;
-              }
-              .custom-modal-scroll::-webkit-scrollbar-thumb {
-                background-color: rgba(139, 29, 29, 0.3);
-                border-radius: 20px;
-              }
-              /* Прячем горизонтальный скролл на всякий случай на уровне движка */
-              .custom-modal-scroll::-webkit-scrollbar:horizontal {
-                display: none;
-              }
-            `}</style>
-          </div>
-        )}
       </div>
+
+
+      {mounted && createPortal(
+        <AnimatePresence>
+          {selectedReview && (
+            <motion.div
+              className="fixed inset-0 bg-black/40 backdrop-blur-md z-[9999] flex items-center justify-center p-4"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setSelectedReview(null)}
+            >
+              <motion.div
+                initial={{ opacity: 0, scale: 0.95, y: 15 }}
+                animate={{ opacity: 1, scale: 1, y: 0 }}
+                exit={{ opacity: 0, scale: 0.95, y: 15 }}
+                transition={{ duration: 0.3, ease: "easeOut" }}
+                className="max-w-2xl w-full h-auto min-h-[30vh] max-h-[85vh] md:max-h-[80vh] relative bg-[#FDFCF6] rounded-2xl border border-[#8B1D1D]/25 shadow-2xl flex flex-col overflow-hidden"
+                onClick={(e) => e.stopPropagation()}
+              >
+                <button
+                  className="absolute top-5 right-6 text-2xl text-[#8B1D1D] opacity-60 hover:opacity-100 hover:rotate-90 transition-all z-[110] w-8 h-8 flex items-center justify-center"
+                  onClick={() => setSelectedReview(null)}
+                >
+                  ✕
+                </button>
+          
+                <div className="p-7 md:p-10 pb-2 md:pb-4 bg-[#FDFCF6] z-10">
+                  <h3 className="text-[#5C1616] font-bold text-xl md:text-2xl pr-12 leading-snug">
+                    {selectedReview.category}
+                  </h3>
+                  <div className="h-[2px] bg-[#8B1D1D] w-14 mt-4 opacity-75" />
+                </div>
+          
+                <div 
+                  className="flex-1 overflow-y-auto px-7 md:px-10 pb-10 custom-modal-scroll relative z-20"
+                  style={{
+                    scrollbarWidth: 'thin',
+                    scrollbarColor: '#8B1D1D rgba(139, 29, 29, 0.1)'
+                  }}
+                >
+                  <p className="text-[#5C1616] leading-relaxed text-base md:text-lg italic whitespace-pre-line relative z-30 w-full">
+                    «{selectedReview.text}»
+                  </p>
+
+                  <div className="absolute bottom-2 right-2 w-48 h-48 pointer-events-none opacity-[0.05] z-0 rotate-[-15deg]">
+                     <Image src={Ornament} alt="" fill className="object-contain" />
+                  </div>
+                </div>
+              </motion.div>
+                
+              <style jsx global>{`
+                .custom-modal-scroll::-webkit-scrollbar {
+                  width: 5px;
+                }
+                .custom-modal-scroll::-webkit-scrollbar-track {
+                  background: transparent;
+                }
+                .custom-modal-scroll::-webkit-scrollbar-thumb {
+                  background-color: rgba(139, 29, 29, 0.3);
+                  border-radius: 20px;
+                }
+                .custom-modal-scroll::-webkit-scrollbar:horizontal {
+                  display: none;
+                }
+              `}</style>
+            </motion.div>
+          )}
+        </AnimatePresence>,
+        document.body
+      )}
     </section>
   );
 };

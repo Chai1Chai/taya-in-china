@@ -5,7 +5,7 @@ import Image from "next/image";
 import { motion, Variants } from "framer-motion";
 import Ornament from '@/assets/ornament.svg';
 
-import myPhoto from '@/assets/photo.png'; 
+import myPhoto from '@/assets/photo.webp'; 
 import lanternIcon from '@/assets/lantern.svg';
 import lanternRedIcon from '@/assets/lanternRed.svg'; 
 
@@ -99,7 +99,7 @@ const WhyNotAgency: React.FC = () => {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="font-[family-name:var(--font-montserrat)] text-3xl md:text-6xl text-[#4A2418] font-base mb-12"
+          className="font-[family-name:var(--font-mm9)] uppercase text-3xl md:text-6xl text-[#4A2418] font-base mb-12"
         >
           Почему не агентство?
         </motion.h2>
@@ -137,7 +137,7 @@ const WhyNotAgency: React.FC = () => {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="font-[family-name:var(--font-montserrat)] text-3xl md:text-6xl text-[#4A2418] font-base mb-12"
+          className="font-[family-name:var(--font-mm9)] uppercase text-3xl md:text-6xl text-[#4A2418] font-base mb-12"
         >
           Я предлагаю:
         </motion.h2>

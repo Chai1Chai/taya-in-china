@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import photo from "@/assets/photoContact.png";
+import photo from "@/assets/photoContact.webp";
 import fish01 from "@/assets/fish01.svg";
 import fish02 from "@/assets/fish02.svg";
 import tgicon from "@/assets/TelegramLogo.svg";
@@ -19,8 +19,8 @@ const ContactBlock = () => {
         <Image src={Ornament} alt="" fill className="object-contain" />
       </div>
 
-      <div className="z-10 max-w-6xl w-full flex flex-col md:flex-row items-center md:items-start justify-center gap-20 px-4">
-        <div className="rounded-[30px] order-2 md:order-1 overflow-hidden">
+      <div className="z-2 max-w-6xl w-full flex flex-col md:flex-row items-center md:items-start justify-center gap-20 px-4">
+        <div className="rounded-[53px] order-2 md:order-1 overflow-hidden">
           <img
             src={photo.src}
             alt="photo"

@@ -3,8 +3,12 @@
 import Image from "next/image";
 import { motion, Variants } from "framer-motion";
 
-import AboutMeBackground from "@/assets/AboutMeBackground.png";
-import Photo from "@/assets/AboutMephoto.png";
+// Импортируем новые фоновые изображения
+import RightBgAboutMe from "@/assets/RightBackground-AboutMe.webp";
+import LeftBgAboutMe from "@/assets/Leftbackground-AboutMe.webp";
+import CenterBgAboutMe from "@/assets/CenterBackground-AboutMe.webp";
+
+import Photo from "@/assets/AboutMephoto.webp";
 import Fan from "@/assets/fan.svg";
 import Lantern from "@/assets/lantern.svg";
 
@@ -26,14 +30,25 @@ const AboutMe = () => {
 
   return (
     <section className="relative py-20 px-4 md:px-16 lg:px-24 xl:px-32 overflow-hidden font-[family-name:var(--font-raleway)]">
-      <div
-        className="absolute inset-0 z-0 opacity-50 pointer-events-none"
-        style={{
-          backgroundImage: `url(${AboutMeBackground.src})`,
-          backgroundRepeat: "repeat-y",
-          backgroundPosition: "top center",
-          backgroundSize: "100% auto",
-        }}
+
+      <div 
+        className="hidden md:block absolute top-10 left-0 w-1/2 h-1/2 z-0 opacity-40 pointer-events-none bg-no-repeat bg-left-top bg-contain"
+        style={{ backgroundImage: `url(${LeftBgAboutMe.src})` }}
+      />
+
+      <div 
+        className="hidden md:block  absolute top-10 right-0 w-1/4 h-1/2 z-0 opacity-40 pointer-events-none bg-no-repeat bg-right-top bg-contain"
+        style={{ backgroundImage: `url(${RightBgAboutMe.src})` }}
+      />
+
+      <div 
+        className="hidden md:block absolute bottom-40 left-0 w-1/4 h-1/2 z-0 opacity-40 pointer-events-none bg-no-repeat bg-left-bottom bg-contain -translate-x-1/4 scale-x-[-1]"
+        style={{ backgroundImage: `url(${CenterBgAboutMe.src})` }}
+      />
+
+      <div 
+        className="hidden md:block absolute bottom-40 right-0 w-1/4 h-1/2 z-0 opacity-40 pointer-events-none bg-no-repeat bg-right-bottom bg-contain translate-x-1/4"
+        style={{ backgroundImage: `url(${CenterBgAboutMe.src})` }}
       />
 
       <div className="max-w-6xl mx-auto relative z-10">
@@ -48,7 +63,6 @@ const AboutMe = () => {
         </motion.h2>
 
         <div className="flex flex-col md:flex-row items-center justify-between gap-10">
-          {/* Блок с фото */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}

@@ -99,7 +99,7 @@ const Services = ({ data }: { data: ServiceItem[] }) => {
       <div className="max-w-6xl mx-auto relative z-10">
 
         <motion.h2 
-          className="font-[family-name:var(--font-montserrat)] text-center text-4xl md:text-6xl mb-12 text-[#6B5E2E]"
+          className="font-[family-name:var(--font-mm9)] uppercase text-center text-4xl md:text-6xl mb-12 text-[#6B5E2E]"
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}

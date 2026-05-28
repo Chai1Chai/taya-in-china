@@ -41,7 +41,7 @@ const Footer = () => {
         </div>
 
         <div>
-          <h3 className="hidden md:flex text-xl mb-6 font-semibold">
+          <h3 className="hidden text-xl md:flex text-xl mb-6">
             Навигация
           </h3>
 
@@ -49,7 +49,7 @@ const Footer = () => {
             <li>
               <a
                 href="#hero"
-                className="hover:text-white transition-colors duration-200"
+                className="hover:text-white text-xl transition-colors duration-200"
               >
                 Главная
               </a>

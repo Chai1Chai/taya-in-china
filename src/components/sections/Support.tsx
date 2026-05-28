@@ -1,7 +1,7 @@
 'use client'
 import React from "react";
 import { motion, Variants } from "framer-motion"; 
-import SupportImage from "@/assets/support_img.png";
+import SupportImage from "@/assets/support_img.webp";
 
 
 const containerVariants: Variants = {
@@ -58,7 +58,7 @@ const Support: React.FC = () => {
       >
         <motion.h1
           variants={itemVariants}
-          className={`font-[family-name:var(--font-montserrat)] w-full font-medium text-4xl md:text-6xl leading-[60px] md:leading-[84px] font-normal mb-4 text-[#636024]`}
+          className={`font-[family-name:var(--font-mm9)] uppercase w-full font-medium text-4xl md:text-6xl leading-[60px] md:leading-[84px] font-normal mb-4 text-[#636024]`}
         >
           Сопровождение по поступлению
         </motion.h1>
@@ -88,7 +88,7 @@ const Support: React.FC = () => {
       <motion.img
         src={SupportImage.src} 
         alt="Сопровождение в поступление"
-        className="hidden md:block max-w-xs sm:max-w-sm lg:max-w-md md:mt-0"
+        className="hidden md:block max-w-xs sm:max-w-sm lg:max-w-md md:mt-0 rounded-[40px] object-cover"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.3 }}

@@ -1,7 +1,8 @@
 "use client";
 import React, { useState, useEffect } from "react";
+import Logo from "@/assets/favicon.svg";
+import Image from "next/image";
 
-// Определяем интерфейс для ссылок навигации
 interface NavLink {
     name: string;
     path: string;
@@ -31,7 +32,6 @@ const Navbar: React.FC = () => {
 
     return (
         <header className="font-[Montserrat]">
-            {/* Используем <nav> с aria-label для улучшения SEO и доступности */}
             <nav 
                 aria-label="Основная навигация"
                 className={`fixed top-0 left-0 w-full flex items-center px-4 md:px-16 lg:px-24 xl:px-32 transition-all duration-500 z-50
@@ -41,9 +41,14 @@ const Navbar: React.FC = () => {
                 }`}
             >             
     
-                <div className="flex-1 flex justify-start">
+                <div className="flex-1 flex justify-start ">
                     <a href="/" className="flex items-center gap-2" aria-label="На главную">
-                        <span className="text-lg font-semibold text-[#636024]">Logo</span>
+                        <Image 
+                            src={Logo} 
+                            alt="Логотип" 
+                            priority     
+                            className="h-12 w-12" 
+                        />
                     </a>
                 </div>      
                 

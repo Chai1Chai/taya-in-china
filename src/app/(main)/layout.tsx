@@ -3,7 +3,7 @@ import { Montserrat, Raleway } from "next/font/google";
 import localFont from 'next/font/local';
 import Script from "next/script";
 import "./globals.css";
-
+import LogoIcon from "@/assets/favicon.svg";
 const montserrat = Montserrat({
   subsets: ["latin", "cyrillic"],
   weight: ["400", "500", "600", "700"],
@@ -22,14 +22,14 @@ const mm9Prose = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "TayaInChina | Поступление в университеты Китая и гранты",
+  title: "Тая из китая | Поступление в университеты Китая и гранты",
   description: "Экспертное сопровождение при поступлении в вузы Китая. Помощь в подборе программ, оформлении документов и получении грантов. Твой путь к образованию в Китае с Таей.",
-  keywords: ["образование в Китае", "учеба в Китае", "гранты в Китай", "университеты Китая", "поступление в Китай", "TayaInChina"],
+  keywords: ["образование в Китае", "учеба в Китае", "гранты в Китай", "университеты Китая", "поступление в Китай", "Тая из китая"],
   authors: [{ name: "TayaInChina" }],
   metadataBase: new URL('https://taya-in-china.ru'), // Замени на реальный домен после покупки
   
   openGraph: {
-    title: "TayaInChina — Твой гид по образованию в Китае",
+    title: "Тая из китая — Твой гид по образованию в Китае",
     description: "Профессиональная помощь в поступлении: от подбора вуза до получения визы.",
     url: 'https://taya-in-china.ru',
     siteName: 'TayaInChina',
@@ -38,9 +38,9 @@ export const metadata: Metadata = {
   },
 
   icons: {
-    icon: '/favicon.ico',
-    shortcut: '/favicon-32x32.png',
-    apple: '/apple-touch-icon.png',
+    icon: [
+      { url: LogoIcon.src, type: 'image/svg+xml' }
+    ],
   },
 };
 
