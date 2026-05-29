@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from "react";
 import { createPortal } from "react-dom"; // Добавили стандартный портал React
 import Image from "next/image";
-import Ornament from "@/assets/ornament.svg";
+import Ornament from "@/assets/ornament.webp";
 import { motion, AnimatePresence } from "framer-motion";
 import GreenFlowerIcon from "@/assets/greenflower.svg";
 import RedFlowerIcon from "@/assets/redflower.svg";
@@ -87,7 +87,7 @@ const Testimonial = ({ data }: { data: ReviewFromPayload[] }) => {
   return (
     <section className="relative w-full overflow-hidden">
       {/* Ornament */}
-      <div className="absolute -bottom-50 md:-bottom-80 -left-55 w-100 h-100 md:w-160 md:h-160 pointer-events-none z-0">
+      <div className="absolute -bottom-50 md:-bottom-80 -left-55 w-100 h-100 md:w-160 md:h-160 pointer-events-none opacity-50 z-0">
         <Image src={Ornament} alt="" fill className="object-contain" />
       </div>
 

@@ -7,7 +7,7 @@ import fish01 from "@/assets/fish01.svg";
 import fish02 from "@/assets/fish02.svg";
 import tgicon from "@/assets/TelegramLogo.svg";
 import vkicon from "@/assets/VKLogo.svg";
-import Ornament from "@/assets/ornament.svg";
+import Ornament from "@/assets/ornament.webp";
 
 const ContactBlock = () => {
   const imageVariants = {
@@ -18,11 +18,11 @@ const ContactBlock = () => {
   return (
     <section className="font-[family-name:var(--font-montserrat)] w-full flex justify-center py-10 px-4 md:px-16 lg:px-24 xl:px-32 relative overflow-hidden">
       {/* Фоновые орнаменты */}
-      <div className="absolute -top-50 md:-top-80 -left-55 w-100 h-100 md:w-160 md:h-160 pointer-events-none">
+      <div className="absolute -top-50 md:-top-80 -left-55 w-100 h-100 md:w-160 md:h-160 pointer-events-none opacity-50">
         <Image src={Ornament} alt="" fill className="object-contain" />
       </div>
 
-      <div className="absolute -bottom-50 md:-bottom-90 -right-55 w-100 h-100 md:w-160 md:h-160 pointer-events-none">
+      <div className="absolute -bottom-50 md:-bottom-90 -right-55 w-100 h-100 md:w-160 md:h-160 pointer-events-none opacity-50">
         <Image src={Ornament} alt="" fill className="object-contain" />
       </div>
 
