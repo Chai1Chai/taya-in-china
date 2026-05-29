@@ -11,7 +11,7 @@ import Block05 from "@/assets/Blocks/Block05.svg";
 import Block06 from "@/assets/Blocks/Block06.svg";
 import Block07 from "@/assets/Blocks/Block07.webp";
 import lanterngreen from "@/assets/lantern02.svg";
-import Ornament from "@/assets/ornament.svg";
+import Ornament from "@/assets/ornament.webp";
 
 const ExperienceSection: React.FC = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
@@ -53,16 +53,23 @@ const ExperienceSection: React.FC = () => {
     <section className="relative w-full overflow-hidden">
       
       {/* ========================================================================= */}
+      {/* ГЛОБАЛЬНЫЕ ФОНОВЫЕ ОРНАМЕНТЫ (Вынесены за пределы версий сайта) */}
+      {/* ========================================================================= */}
+      
+      {/* Левый узор: на мобилках меньше и top-100, на md+ становится больше */}
+      <div className="absolute -left-50 top-100 w-100 h-100 md:w-150 md:h-150 pointer-events-none z-0 opacity-50">
+        <Image src={Ornament} alt="" fill className="object-contain object-left" />
+      </div>
+
+      {/* Правый узор: на мобилках -right-55, начиная с md сдвигается на -right-80 и растет */}
+      <div className="absolute -right-50 md:-right-80 top-0 w-100 h-100 md:w-150 md:h-150 pointer-events-none z-0 opacity-50">
+        <Image src={Ornament} alt="" fill className="object-contain object-left" />
+      </div>
+
+      {/* ========================================================================= */}
       {/* 1. ВЕРСИЯ ДЛЯ МОБИЛЬНЫХ УСТРОЙСТВ (До 768px включительно) */}
       {/* ========================================================================= */}
       <div className="md:hidden block relative z-10 max-w-6xl mx-auto py-10 px-4">
-        <div className="absolute -left-50 top-100 w-100 h-100 pointer-events-none z-0">
-          <Image src={Ornament} alt="" fill className="object-contain object-left" />
-        </div>
-        <div className="absolute -right-50 top-0 w-100 h-100 pointer-events-none z-0">
-          <Image src={Ornament} alt="" fill className="object-contain object-left" />
-        </div>
-
         <div className="relative z-10">
           <motion.div
             initial="hidden"
@@ -94,7 +101,7 @@ const ExperienceSection: React.FC = () => {
 
                 {openIndex === 0 && (
                   <p className="mt-2 text-sm text-[#4a4a2a]">
-                    Когда я проходила этот путь, мне не хватало самого главного — понятной и честной информации. Очень часто либо не договаривают, либо дают неполную информацию, либо просто говорят не так, как есть на самом деле. Сейчас многие вещи кажутся очевидными, но когда ты только начинаешь, ты не понимаешь, кому верить.
+                    When I was going through this path, I lacked the most important thing — clear and honest information. Very often they either omit things or give incomplete information, or simply don't say it the way it really is. Now many things seem obvious, but when you're just starting out, you don't understand who to believe.
                   </p>
                 )}
               </div>
@@ -141,16 +148,6 @@ const ExperienceSection: React.FC = () => {
       {/* 2. ВЕРСИЯ ДЛЯ ПЛАНШЕТОВ (От 769px до 1224px включительно) */}
       {/* ========================================================================= */}
       <div className="min-[769px]:max-[1224px]:block hidden relative w-full">
-        
-
-        <div className="absolute -left-50 top-100 w-150 h-150 pointer-events-none z-0">
-          <Image src={Ornament} alt="" fill className="object-contain object-left" />
-        </div>
-
-        <div className="absolute -right-80 top-0 w-150 h-150 pointer-events-none z-0">
-          <Image src={Ornament} alt="" fill className="object-contain object-left" />
-        </div>
-
         <div className="relative z-10 max-w-4xl mx-auto py-16 px-8 flex flex-col gap-6 text-[#4a4a2a]">
           
           <div className="flex items-center justify-start gap-4 mb-4">
@@ -167,7 +164,6 @@ const ExperienceSection: React.FC = () => {
               }}
             />
           </div>
-
 
           <div className="bg-[#FCFDED] border-2 border-[#636024]/30 rounded-2xl p-8 text-center text-base leading-relaxed font-medium shadow-sm">
             В Китай я поступала почти самостоятельно. Почему почти? Потому что изначально мне помогала одна достаточно известная языковая школа. Но по факту она не дала того качества услуг, за которое были заплачены деньги. В итоге большую часть процесса я разбирала сама — от выбора университетов до требований к документам.
@@ -203,18 +199,9 @@ const ExperienceSection: React.FC = () => {
       </div>
 
       {/* ========================================================================= */}
-      {/* 3. ДЕСТКТОПНАЯ ВЕРСИЯ (От 1225px и выше) */}
+      {/* 3. ВЕРСИЯ ДЛЯ ДЕСКТOПА (От 1225px и выше) */}
       {/* ========================================================================= */}
       <div className="min-[1225px]:block hidden relative w-full">
-        
-        <div className="absolute -left-50 top-100 w-150 h-150 pointer-events-none z-0">
-          <Image src={Ornament} alt="" fill className="object-contain object-left" />
-        </div>
-
-        <div className="absolute -right-80 top-0 w-150 h-150 pointer-events-none z-0">
-          <Image src={Ornament} alt="" fill className="object-contain object-left" />
-        </div>
-
         <div className="relative z-10 max-w-6xl mx-auto py-20 px-16 lg:px-24 xl:px-32">
           
           <div className="absolute top-50 left-30 w-100 h-300 pointer-events-none">

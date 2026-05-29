@@ -3,7 +3,7 @@
 import Image from "next/image";
 import React, { useState, useMemo, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from "framer-motion"; 
-import Ornament from '@/assets/ornament.svg';
+import Ornament from '@/assets/ornament.webp';
 import GreenFlowerIcon from "@/assets/greenflower.svg";
 import RedFlowerIcon from "@/assets/redflower.svg";
 
@@ -95,7 +95,7 @@ const Universities = ({ data }: { data: UniversityFromPayload[] }) => {
         "top-[-7.5rem] right-[-7.5rem] md:top-[-13.75rem] md:right-[-13.75rem]",
         "top-[-7.5rem] left-[-7.5rem] md:top-[-13.75rem] md:left-[-13.75rem]"
       ].map((pos, i) => (
-        <div key={i} className={`absolute w-60 h-60 md:w-110 md:h-110 pointer-events-none z-0 ${pos}`}>
+        <div key={i} className={`absolute w-60 h-60 md:w-110 md:h-110 opacity-50 pointer-events-none z-0 ${pos}`}>
           <Image src={Ornament} alt="" fill className="object-contain" />
         </div>
       ))}
