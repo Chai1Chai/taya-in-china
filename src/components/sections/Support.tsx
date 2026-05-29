@@ -58,7 +58,7 @@ const Support: React.FC = () => {
       >
         <motion.h1
           variants={itemVariants}
-          className={`font-[family-name:var(--font-mm9)] uppercase w-full font-medium md:text-center lg:text-start text-3xl md:text-6xl font-normal mb-4 text-[#636024] leading-tight sm:leading-snug xl:leading-[84px]`}
+          className={`font-[family-name:var(--font-mm9)] uppercase w-full font-medium md:text-center lg:text-start text-4xl md:text-6xl font-normal mb-4 text-[#636024] leading-tight sm:leading-snug xl:leading-[84px]`}
         >
           Сопровождение по&nbsp;поступлению
         </motion.h1>

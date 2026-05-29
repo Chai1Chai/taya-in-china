@@ -101,7 +101,7 @@ const Universities = ({ data }: { data: UniversityFromPayload[] }) => {
       ))}
 
       <div className="relative z-10 max-w-7xl mx-auto">
-        <h2 className="font-[family-name:var(--font-mm9)] uppercase text-3xl md:text-6xl font-normal text-center mb-12 md:mb-16 text-[#636024]">
+        <h2 className="font-[family-name:var(--font-mm9)] uppercase text-5xl md:text-6xl font-normal text-center mb-12 md:mb-16 text-[#636024]">
           Университеты
         </h2>
 
