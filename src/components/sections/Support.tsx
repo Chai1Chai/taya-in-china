@@ -48,9 +48,9 @@ const imageVariants: Variants = {
 
 const Support: React.FC = () => {
   return (
-    <section className="relative flex flex-col md:flex-row mt-20 items-center justify-center gap-20 px-4 md:px-16 lg:px-24 xl:px-32 pb-20 overflow-hidden">
+    <section className="relative flex flex-col lg:flex-row mt-20 items-center justify-center gap-20 px-4 md:px-16 lg:px-24 xl:px-32 pb-20 overflow-hidden">
       <motion.div 
-        className="w-full flex flex-col items-center md:items-start max-w-xl z-10"
+        className="w-full flex flex-col items-center lg:items-start max-w-xl z-10"
         initial="hidden"          
         whileInView="visible"    
         viewport={{ once: true, amount: 0.3 }}
@@ -58,14 +58,14 @@ const Support: React.FC = () => {
       >
         <motion.h1
           variants={itemVariants}
-          className={`font-[family-name:var(--font-mm9)] uppercase w-full font-medium text-4xl md:text-6xl leading-[60px] md:leading-[84px] font-normal mb-4 text-[#636024]`}
+          className={`font-[family-name:var(--font-mm9)] uppercase w-full font-medium md:text-center lg:text-start text-xl md:text-6xl font-normal mb-4 text-[#636024] leading-tight sm:leading-snug xl:leading-[84px]`}
         >
-          Сопровождение по поступлению
+          Сопровождение по&nbsp;поступлению
         </motion.h1>
         
         <motion.p
           variants={itemVariants}
-          className="text-base md:text-base mb-8 text-[#636024]"
+          className="text-base md:text-center lg:text-start mb-8 text-[#636024]"
         >
           Полное сопровождение на всех этапах поступления — от подготовки документов до зачисления и адаптации после приезда.
         </motion.p>
@@ -85,15 +85,19 @@ const Support: React.FC = () => {
         </a>
       </motion.div>
 
-      <motion.img
-        src={SupportImage.src} 
-        alt="Сопровождение в поступление"
-        className="hidden md:block max-w-xs sm:max-w-sm lg:max-w-md md:mt-0 rounded-[40px] object-cover"
+      <motion.div 
+        className="hidden lg:block w-full max-w-xs xl:max-w-md rounded-[40px] box-border overflow-hidden flex-shrink-0"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.3 }}
-        variants={imageVariants} 
-      />
+        variants={imageVariants}
+      >
+        <img
+          src={SupportImage.src} 
+          alt="Сопровождение в поступление"
+          className="w-full h-auto aspect-[4/5] xl:aspect-auto rounded-[40px] object-cover transition-all duration-300"
+        />
+      </motion.div>
     </section>
   );
 };

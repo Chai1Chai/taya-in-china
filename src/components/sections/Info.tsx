@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState, useRef } from "react";
-import InfoBackground from "@/assets/InfoBackground.png";
+import InfoBackground from "@/assets/InfoBackground.webp";
 
 const Info = () => {
   const [count, setCount] = useState<number>(1);

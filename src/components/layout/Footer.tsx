@@ -5,6 +5,7 @@ import VKImage from "@/assets/VKLogo.svg";
 import TiktokImage from "@/assets/TiktokLogo.svg";
 import YoutubeImage from "@/assets/YoutubeLogo.svg";
 import EnvelopeImage from "@/assets/Envelope.svg";
+import Image from "next/image";
 
 const Footer = () => {
   return (
@@ -14,28 +15,38 @@ const Footer = () => {
           <h3 className="text-xl mb-6">Контакты для связи</h3>
 
           <div className="flex flex-col gap-6">
+            {/* Блок Telegram */}
             <div className="flex items-center gap-4">
               <a
                 href="https://t.me/tayafromchina"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-lg bg-white flex items-center justify-center hover:scale-105 transition"
+                className="w-10 h-10 rounded-lg bg-white flex items-center justify-center hover:scale-105 transition flex-shrink-0"
               >
-                <img src={TGImage.src} alt="telegram" className="w-5 h-5" />
+                <Image 
+                  src={TGImage} 
+                  alt="Telegram" 
+                  className="w-5 h-5 object-contain" 
+                />
               </a>
-              <span>@tayafromchina</span>
+              <span className="truncate">@tayafromchina</span>
             </div>
 
+            {/* Блок VK — теперь центрируется идеально */}
             <div className="flex items-center gap-4">
               <a
                 href="https://vk.ru/tayafromchina"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-lg bg-white flex items-center justify-center hover:scale-105 transition"
+                className="w-10 h-10 rounded-lg bg-white flex items-center justify-center hover:scale-105 transition flex-shrink-0"
               >
-                <img src={VKImage.src} alt="telegram" className="w-5 h-5" />
+                <Image 
+                  src={VKImage} 
+                  alt="VK" 
+                  className="w-5 h-5 object-contain" // object-contain удержит иконку ровно по центру без искажений
+                />
               </a>
-              <span>vk.ru/tayafromchina</span>
+              <span className="truncate">vk.ru/tayafromchina</span>
             </div>
           </div>
         </div>
@@ -155,24 +166,27 @@ const Footer = () => {
             </div>
           </div>
 
-          <div className="mt-4">
-            <h3 className="text-xl mb-4">Для предложений</h3>
+            <div className="mt-4">
+              <h3 className="text-xl mb-4">Для предложений</h3>
 
-            <div className="flex items-center gap-4">
-              <a
-                href="mailto:taya.projects@icloud.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-10 h-10 rounded-lg bg-white flex items-center justify-center hover:scale-105 transition"
-              >
-                <img
-                  src={EnvelopeImage.src}
-                  alt="telegram"
-                  className="w-5 h-5"
-                />
-              </a>
+              <div className="flex items-center gap-4 w-full">
+                <a
+                  href="mailto:taya.projects@icloud.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 rounded-lg bg-white flex items-center justify-center hover:scale-105 transition flex-shrink-0"
+                >
+                  <img
+                    src={EnvelopeImage.src}
+                    alt="email"
+                    className="w-5 h-5"
+                  />
+                </a>
 
-              <span>taya.projects@icloud.com</span>
+                {/* Настройки брейкпоинтов текста защищают от вылезания за экран */}
+                <span className="text-sm sm:text-base break-all md:break-normal truncate lg:clip">
+                  taya.projects@icloud.com
+                </span>
             </div>
           </div>
         </div>

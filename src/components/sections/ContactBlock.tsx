@@ -1,5 +1,6 @@
 "use client";
 
+import { motion } from "framer-motion";
 import Image from "next/image";
 import photo from "@/assets/photoContact.webp";
 import fish01 from "@/assets/fish01.svg";
@@ -9,8 +10,14 @@ import vkicon from "@/assets/VKLogo.svg";
 import Ornament from "@/assets/ornament.svg";
 
 const ContactBlock = () => {
+  const imageVariants = {
+    hidden: { opacity: 0, x: -20 },
+    visible: { opacity: 1, x: 0, transition: { duration: 0.6 } }
+  };
+
   return (
     <section className="font-[family-name:var(--font-montserrat)] w-full flex justify-center py-10 px-4 md:px-16 lg:px-24 xl:px-32 relative overflow-hidden">
+      {/* Фоновые орнаменты */}
       <div className="absolute -top-50 md:-top-80 -left-55 w-100 h-100 md:w-160 md:h-160 pointer-events-none">
         <Image src={Ornament} alt="" fill className="object-contain" />
       </div>
@@ -19,16 +26,20 @@ const ContactBlock = () => {
         <Image src={Ornament} alt="" fill className="object-contain" />
       </div>
 
-      <div className="z-2 max-w-6xl w-full flex flex-col md:flex-row items-center md:items-start justify-center gap-20 px-4">
-        <div className="rounded-[53px] order-2 md:order-1 overflow-hidden">
-          <img
-            src={photo.src}
-            alt="photo"
-            className="w-full max-w-[320px] md:max-w-[450px] object-cover"
+      {/* Контейнер: на мобилках flex-col, на планшетах md карточка центрируется, от lg встает в ряд с фото */}
+      <div className="z-10 max-w-6xl w-full flex flex-col lg:flex-row items-center justify-center gap-10 xl:gap-20 px-4">
+        
+        {/* Картинка: block (на мобилках) -> md:hidden (скрыта на планшетах) -> lg:block (на десктопе) */}
+        <div className="block md:hidden lg:block w-full max-w-[320px] xl:max-w-md rounded-[40px] box-border overflow-hidden flex-shrink-0 order-2 lg:order-1">
+          <Image
+            src={photo} 
+            alt="Сопровождение в поступление"
+            className="w-full h-auto xl:aspect-auto rounded-[40px] object-cover transition-all duration-300"
           />
         </div>
 
-        <div className="relative order-1 md:order-2 bg-[#EEE9CB] rounded-[30px] px-8 py-10 w-full max-w-md text-center">
+        {/* Твоя монолитная карточка */}
+        <div className="relative order-1 lg:order-2 bg-[#EEE9CB] rounded-[30px] px-8 py-10 w-full max-w-md text-center flex-shrink-0">
           <Image
             src={fish01}
             alt="fish"
@@ -83,6 +94,7 @@ const ContactBlock = () => {
             Обычно отвечаю в течение дня
           </p>
         </div>
+
       </div>
     </section>
   );

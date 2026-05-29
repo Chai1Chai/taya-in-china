@@ -31,7 +31,6 @@ const Hero: React.FC = () => {
           программы до зачисления.
         </p>
         
-        {/* МОБИЛЬНАЯ ВЕРСИЯ ИЗОБРАЖЕНИЯ С ОБВОДКОЙ */}
         <div className="block md:hidden w-full max-w-xs sm:max-w-sm border-[1.5px] border-[#636024] rounded-[40px] p-3 sm:p-5 mb-5 box-border">
           <Image
             src={HeroImage} 
@@ -49,13 +48,12 @@ const Hero: React.FC = () => {
         </a>
       </div>
 
-      {/* ДЕСКТОПНАЯ ВЕРСИЯ ИЗОБРАЖЕНИЯ С ОБВОДКОЙ */}
-      <div className="hidden md:block w-full max-w-xs sm:max-w-sm lg:max-w-md border-[1.5px] border-[#636024] rounded-[40px] p-3 md:mt-30 box-border">
+      <div className="hidden md:block w-full max-w-xs lg:max-w-sm xl:max-w-md border-[1.5px] border-[#636024] rounded-[40px] p-3 md:mt-30 box-border flex-shrink-0">
         <Image
           src={HeroImage} 
           alt="Консультация по поступлению в университеты Китая" 
           priority
-          className="w-full h-auto rounded-[30px] transition-all duration-300"
+          className="w-full h-auto aspect-[4/5] xl:aspect-auto rounded-[30px] object-cover transition-all duration-300"
         />
       </div>
     </section>
@@ -63,3 +61,5 @@ const Hero: React.FC = () => {
 };
 
 export default Hero;
+
+
