@@ -99,7 +99,7 @@ const WhyNotAgency: React.FC = () => {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="font-[family-name:var(--font-mm9)] uppercase text-5xl md:text-6xl text-[#4A2418] font-base mb-12"
+          className="font-[family-name:var(--font-mm9)] uppercase text-4xl md:text-6xl text-[#4A2418] font-base mb-12"
         >
           Почему не агентство?
         </motion.h2>
@@ -137,7 +137,7 @@ const WhyNotAgency: React.FC = () => {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="font-[family-name:var(--font-mm9)] uppercase text-5xl md:text-6xl text-[#4A2418] font-base mb-12"
+          className="font-[family-name:var(--font-mm9)] uppercase text-4xl md:text-6xl text-[#4A2418] font-base mb-12"
         >
           Я предлагаю:
         </motion.h2>

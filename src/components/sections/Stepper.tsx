@@ -55,7 +55,7 @@ const Stepper: React.FC = () => {
       className="relative w-full mb-20 bg-cover bg-center px-4 md:px-16 lg:px-24 xl:px-32"
       style={{ backgroundImage: `url(${StepperImage.src})` }}
     >
-      <h2 className="font-[family-name:var(--font-mm9)] uppercase text-5xl md:text-6xl leading-[60px] md:leading-[84px] font-normal mb-24 text-[#5E0F08] text-center">
+      <h2 className="font-[family-name:var(--font-mm9)] uppercase text-4xl md:text-6xl leading-[60px] md:leading-[84px] font-normal mb-24 text-[#5E0F08] text-center">
         Этапы сопровождения
       </h2>
 

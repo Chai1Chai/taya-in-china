@@ -18,7 +18,7 @@ const ConstTable = ({ data }: { data: PricingRowFromPayload[] }) => {
 
   return (
     <section className="w-full px-4 md:px-16 lg:px-24 xl:px-32 mb-10 font-[family-name:var(--font-montserrat)]">
-      <h2 className="font-[family-name:var(--font-mm9)] uppercase w-full text-3xl md:text-6xl leading-tight font-normal mb-10 text-[#636024] text-center">
+      <h2 className="font-[family-name:var(--font-mm9)] uppercase w-full text-4xl md:text-6xl leading-tight font-normal mb-10 text-[#636024] text-center">
         Стоимость сопровождения
       </h2>
 
