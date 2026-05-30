@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://taya-in-china.ru'
+  const baseUrl = 'https://tayafromchina.com'
 
   return [
     {
