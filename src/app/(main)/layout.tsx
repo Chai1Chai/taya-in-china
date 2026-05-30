@@ -26,12 +26,12 @@ export const metadata: Metadata = {
   description: "Экспертное сопровождение при поступлении в вузы Китая. Помощь в подборе программ, оформлении документов и получении грантов. Твой путь к образованию в Китае с Таей.",
   keywords: ["образование в Китае", "учеба в Китае", "гранты в Китай", "университеты Китая", "поступление в Китай", "Тая из китая"],
   authors: [{ name: "TayaInChina" }],
-  metadataBase: new URL('https://taya-in-china.ru'), // Замени на реальный домен после покупки
+  metadataBase: new URL('https://tayafromchina.com'), // Замени на реальный домен после покупки
   
   openGraph: {
     title: "Тая из китая — Твой гид по образованию в Китае",
     description: "Профессиональная помощь в поступлении: от подбора вуза до получения визы.",
-    url: 'https://taya-in-china.ru',
+    url: 'https://tayafromchina.com',
     siteName: 'TayaInChina',
     locale: 'ru_RU',
     type: 'website',

@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: '/',
       disallow: '/admin',
     },
-    sitemap: 'https://taya-in-china.ru/sitemap.xml',
+    sitemap: 'https://tayafromchina.com/sitemap.xml',
   }
 }
