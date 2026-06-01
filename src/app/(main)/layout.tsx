@@ -3,7 +3,6 @@ import { Montserrat, Raleway } from "next/font/google";
 import localFont from 'next/font/local';
 import Script from "next/script";
 import "./globals.css";
-import LogoIcon from "@/assets/favicon.svg";
 const montserrat = Montserrat({
   subsets: ["latin", "cyrillic"],
   weight: ["400", "500", "600", "700"],
@@ -39,7 +38,7 @@ export const metadata: Metadata = {
 
   icons: {
     icon: [
-      { url: LogoIcon.src, type: 'image/svg+xml' }
+      { url: '/favicon.svg', type: 'image/svg+xml' }
     ],
   },
 };
