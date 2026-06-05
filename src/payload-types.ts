@@ -215,7 +215,11 @@ export interface Costtable {
  */
 export interface Review {
   id: number;
-  category: 'О консультации по поступлению' | 'О сопровождении' | 'Отзывы о подборе университетов';
+  category:
+    | 'О консультации по поступлению'
+    | 'О сопровождении'
+    | 'Отзывы о подборе университетов'
+    | 'О стратегии поступления';
   text: string;
   updatedAt: string;
   createdAt: string;

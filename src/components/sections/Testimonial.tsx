@@ -54,6 +54,7 @@ const Testimonial = ({ data }: { data: ReviewFromPayload[] }) => {
     "О консультации по поступлению",
     "О сопровождении",
     "Отзывы о подборе университетов",
+    "О стратегии поступления"
   ];
 
   const filteredReviews = filter === "Все"
