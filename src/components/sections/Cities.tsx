@@ -3,7 +3,7 @@
 import Image from "next/image";
 import React, { useState } from "react";
 import { PROVINCES_DATA } from "@/assets/Data/mapData";
-import Map from "@/assets/map.svg";
+import Map from "@/assets/map02.svg";
 import MapPoint from "@/assets/MapPin.svg";
 import Ornament from "@/assets/ornament.webp";
 
@@ -112,7 +112,7 @@ const Cities = () => {
         <div className="relative w-full overflow-hidden">
           <img src={Map.src} alt="Карта Китая" className="w-full h-auto block" />
 
-          <svg viewBox="0 0 867 610" className="absolute top-0 left-0 w-full h-full">
+          <svg viewBox="0 0 866 649" className="absolute top-0 left-0 w-full h-full">
             {PROVINCES_DATA.map((prov: Province) => (
               <path
                 key={prov.id}
@@ -150,8 +150,8 @@ const Cities = () => {
             <div
               className="absolute hidden md:block pointer-events-none bg-white/95 px-4 py-2 border border-[#8B1D1D] shadow-xl text-[#8B1D1D] font-medium rounded-md"
               style={{
-                left: `${(currentCity.markerCoords.x / 867) * 100}%`,
-                top: `${(currentCity.markerCoords.y / 610) * 100 - 5}%`,
+                left: `${(currentCity.markerCoords.x / 866) * 100}%`,
+                top: `${(currentCity.markerCoords.y / 649) * 100 - 5}%`,
                 transform: "translate(-50%, -100%)",
               }}
             >
