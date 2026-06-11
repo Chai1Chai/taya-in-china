@@ -1,18 +1,52 @@
 import type { Metadata } from "next";
-import { Montserrat, Raleway } from "next/font/google";
 import localFont from 'next/font/local';
 import Script from "next/script";
 import "./globals.css";
-const montserrat = Montserrat({
-  subsets: ["latin", "cyrillic"],
-  weight: ["400", "500", "600", "700"],
-  variable: "--font-montserrat",
+const montserrat = localFont({
+  src: [
+    {
+      path: '../../assets/fonts/Montserrat-Regular.ttf', 
+      weight: '400',
+      style: 'normal',
+    },
+    {
+      path: '../../assets/fonts/Montserrat-Medium.ttf', 
+      weight: '500',
+      style: 'normal',
+    },
+    {
+      path: '../../assets/fonts/Montserrat-SemiBold.ttf',
+      weight: '600',
+      style: 'normal',
+    },
+    {
+      path: '../../assets/fonts/Montserrat-Bold.ttf',
+      weight: '700',
+      style: 'normal',
+    },
+  ],
+  variable: '--font-montserrat',
 });
 
-const raleway = Raleway({
-  subsets: ["latin", "cyrillic"],
-  weight: ["400", "500", "600"],
-  variable: "--font-raleway",
+const raleway = localFont({
+  src: [
+    {
+      path: '../../assets/fonts/Raleway-Regular.ttf',
+      weight: '400',
+      style: 'normal',
+    },
+    {
+      path: '../../assets/fonts/Raleway-Medium.ttf',
+      weight: '500',
+      style: 'normal',
+    },
+    {
+      path: '../../assets/fonts/Raleway-SemiBold.ttf',
+      weight: '600',
+      style: 'normal',
+    },
+  ],
+  variable: '--font-raleway',
 });
 
 const mm9Prose = localFont({
