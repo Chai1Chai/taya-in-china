@@ -1,4 +1,3 @@
-"use client";
 import React, { CSSProperties } from "react";
 import Image from "next/image";
 import HeroBackground from "@/assets/Hero_Background.webp";
@@ -7,16 +6,36 @@ import HeroImage from "@/assets/hero_img.webp";
 
 
 const Hero: React.FC = () => {
-  return (
-    <section
-      className="relative flex flex-col md:flex-row md:items-center justify-center gap-10 md:gap-30 px-4 md:px-16 lg:px-24 xl:px-32 
-                 bg-[image:var(--bg-mobile)] md:bg-[image:var(--bg-desktop)]
-                 bg-cover bg-center md:bg-no-repeat"
-      style={{
-        "--bg-desktop": `url(${HeroBackground.src})`,
-        "--bg-mobile": `url(${MobileHeroBackground.src})`,
-      } as CSSProperties}
-    >
+return (
+    <section className="relative flex flex-col md:flex-row md:items-center justify-center gap-10 md:gap-30 px-4 md:px-16 lg:px-24 xl:px-32 overflow-hidden min-h-[80vh]">
+      
+      {/* --- АДАПТИВНЫЙ ФОН ЧЕРЕЗ NEXT/IMAGE --- */}
+      {/* Мобильный фон */}
+      <div className="absolute inset-0 z-0 block md:hidden">
+        <Image
+          src={MobileHeroBackground}
+          alt=""
+          fill
+          priority
+          fetchPriority="high" 
+          loading="eager"
+          className="object-cover object-center"
+          sizes="100vw"
+        />
+      </div>
+      {/* Десктопный фон */}
+      <div className="absolute inset-0 z-0 hidden md:block">
+        <Image
+          src={HeroBackground}
+          alt=""
+          fill
+          priority
+          fetchPriority="high" 
+          loading="eager"
+          className="object-cover object-center"
+          sizes="100vw"
+        />
+      </div>
       <div className="z-10 flex flex-col items-center mt-30 md:items-start max-w-xl">
         <h1
           className="font-[family-name:var(--font-mm9)] text-5xl text-center md:text-start md:text-6xl leading-[68px] md:leading-[84px] font-medium mb-4 text-[#636024]"
@@ -36,6 +55,8 @@ const Hero: React.FC = () => {
             src={HeroImage} 
             alt="Консультация по поступлению в университеты Китая"
             priority
+            fetchPriority="high" 
+            loading="eager"
             className="w-full h-auto rounded-[24px]"
           />
         </div>
@@ -48,11 +69,13 @@ const Hero: React.FC = () => {
         </a>
       </div>
 
-      <div className="hidden md:block w-full max-w-xs lg:max-w-sm xl:max-w-md border-[1.5px] border-[#636024] rounded-[40px] p-3 md:mt-30 box-border flex-shrink-0">
+      <div className="hidden md:block w-full max-w-xs lg:max-w-sm xl:max-w-md border-[1.5px] border-[#636024] rounded-[40px] p-3 md:mt-30 box-border flex-shrink-0 z-10">
         <Image
           src={HeroImage} 
           alt="Консультация по поступлению в университеты Китая" 
           priority
+          fetchPriority="high" 
+          loading="eager"
           className="w-full h-auto aspect-[4/5] xl:aspect-auto rounded-[30px] object-cover transition-all duration-300"
         />
       </div>

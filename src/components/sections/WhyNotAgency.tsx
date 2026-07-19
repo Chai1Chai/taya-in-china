@@ -50,7 +50,7 @@ const itemVariants: Variants = {
 
 const topCards: TopCard[] = [
   {
-    title: "Высокая стоимость и недостоверная информация",
+    title: "Высокая цена и ложная информация",
     text: "Агентства берут от 100 000 ₽ при непрозрачных условиях договора. Зачастую за эти деньги клиент получает неполную или устаревшую информацию, которая не гарантирует результат.",
   },
   {
@@ -121,11 +121,11 @@ const WhyNotAgency: React.FC = () => {
                 <Image src={lanternRedIcon} alt="lantern" width={32} height={32} className="-mt-5 z-10" />
               </div>
 
-              <h3 className="text-[#4A2418] font-bold text-lg mb-4 pr-10 uppercase tracking-tight text-center translate-x-4">
+              <h3 className="text-[#4A2418] font-bold text-xl mb-4 pr-10 uppercase tracking-tight text-center translate-x-4">
                 {card.title}
               </h3>
 
-              <p className="text-[#4A2418]/80 text-sm leading-relaxed">
+              <p className="text-[#4A2418]/80 text-base leading-relaxed">
                 {card.text}
               </p>
             </motion.div>
@@ -175,11 +175,11 @@ const WhyNotAgency: React.FC = () => {
                 className="bg-[#5C0F07] p-7 rounded-3xl flex justify-between items-center relative group"
               >
                 <div className="flex-1">
-                  <h3 className="text-[#F8F5E9] font-bold text-xl mb-3">
+                  <h3 className="text-[#F8F5E9] font-bold text-2xl mb-3">
                     {card.title}
                   </h3>
 
-                  <p className="text-[#F8F5E9]/80 text-sm leading-snug">
+                  <p className="text-[#F8F5E9]/80 text-base leading-snug">
                     {card.text}
                   </p>
                 </div>

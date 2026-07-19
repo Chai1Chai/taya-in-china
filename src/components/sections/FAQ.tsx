@@ -6,7 +6,7 @@ import Image from 'next/image';
 import { faqDataLeft, faqDataRight } from '@/assets/Data/faqData';
 
 import plusIcon from '@/assets/Plus.svg';
-import Background from '@/assets/backgroundFAQ.svg';
+import Background from '@/assets/backgroundFAQ.webp';
 
 interface FAQItemProps {
   question: string;

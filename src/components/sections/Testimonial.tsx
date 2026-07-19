@@ -1,12 +1,33 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { createPortal } from "react-dom"; // Добавили стандартный портал React
+import { createPortal } from "react-dom";
 import Image from "next/image";
 import Ornament from "@/assets/ornament.webp";
 import { motion, AnimatePresence } from "framer-motion";
 import GreenFlowerIcon from "@/assets/greenflower.svg";
 import RedFlowerIcon from "@/assets/redflower.svg";
+
+// --- Иконки с цветом #5C1616 ---
+const LocationIcon = () => (
+  <svg width="14" height="16" viewBox="0 0 14 18" fill="none" xmlns="http://www.w3.org/2000/svg" className="flex-shrink-0">
+    <path d="M7 0C3.134 0 0 3.134 0 7C0 12.25 7 18 7 18C7 18 14 12.25 14 7C14 3.134 10.866 0 7 0ZM7 9.5C5.619 9.5 4.5 8.381 4.5 7C4.5 5.619 5.619 4.5 7 4.5C8.381 4.5 9.5 5.619 9.5 7C9.5 8.381 8.381 9.5 7 9.5Z" fill="#5C1616"/>
+  </svg>
+);
+
+const BuildingIcon = () => (
+  <svg width="16" height="16" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" className="flex-shrink-0">
+    <path d="M16 2V16H11V10H7V16H2V2H16ZM18 0H0V18H18V0ZM13 4H15V6H13V4ZM13 7H15V9H13V7ZM13 10H15V12H13V10ZM13 13H15V15H13V13ZM3 4H5V6H3V4ZM3 7H5V9H3V7ZM3 10H5V12H3V10ZM3 13H5V15H3V13ZM8 4H10V6H8V4ZM8 7H10V9H8V7Z" fill="#5C1616"/>
+  </svg>
+);
+
+const GradCapIcon = () => (
+  <svg width="18" height="16" viewBox="0 0 22 18" fill="none" xmlns="http://www.w3.org/2000/svg" className="flex-shrink-0">
+    <path d="M11 0L0 6L11 12L20 7.09V13H22V6L11 0Z" fill="#5C1616"/>
+    <path d="M4.18005 8.28003L11 12L17.82 8.28003V12.72L11 16.44L4.18005 12.72V8.28003Z" fill="#5C1616"/>
+  </svg>
+);
+// -----------------------------------------------------------------
 
 type ReviewFromPayload = {
   id: string;
@@ -14,13 +35,19 @@ type ReviewFromPayload = {
   text: string;
 };
 
+interface ExtendedReview extends ReviewFromPayload {
+  authorName: string;
+  authorCity: string;
+  targetCity: string;
+  university: string;
+}
+
 const Testimonial = ({ data }: { data: ReviewFromPayload[] }) => {
   const [filter, setFilter] = useState<string>("Все");
   const [currentIndex, setCurrentIndex] = useState<number>(0);
-  const [selectedReview, setSelectedReview] = useState<ReviewFromPayload | null>(null);
+  const [selectedReview, setSelectedReview] = useState<ExtendedReview | null>(null);
   const [isDesktop, setIsDesktop] = useState(false);
-  const [mounted, setMounted] = useState(false); 
-
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
     setMounted(true);
@@ -29,7 +56,6 @@ const Testimonial = ({ data }: { data: ReviewFromPayload[] }) => {
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
-
 
   useEffect(() => {
     if (selectedReview) {
@@ -47,8 +73,14 @@ const Testimonial = ({ data }: { data: ReviewFromPayload[] }) => {
     };
   }, [selectedReview]);
 
+  const reviewsData: ExtendedReview[] = (data || []).map(review => ({
+    ...review,
+    authorName: "Анастасия",
+    authorCity: "Владивосток",
+    targetCity: "Ханджоу",
+    university: "Zhejiang University of Technology"
+  }));
 
-  const reviewsData = data || [];
   const categories = [
     "Все",
     "О консультации по поступлению",
@@ -144,19 +176,61 @@ const Testimonial = ({ data }: { data: ReviewFromPayload[] }) => {
                   
                   <div 
                     onClick={() => setSelectedReview(review)}
-                    className="relative cursor-pointer min-h-[280px] md:min-h-[320px] flex items-center justify-center p-6 sm:p-8 md:p-10 lg:p-12 bg-[#FCFDED] border-2 border-[#636024]/30 rounded-2xl shadow-sm hover:shadow-md hover:border-[#636024]/60 transition-all duration-300"
+                    className="relative cursor-pointer min-h-[280px] md:min-h-[320px] flex flex-col justify-between p-6 sm:p-8 md:p-10 bg-[#FCFDED] border-2 border-[#636024]/30 rounded-2xl shadow-sm hover:shadow-md hover:border-[#636024]/60 transition-all duration-300"
                   >
                     <div className="absolute inset-1.5 border border-[#636024]/10 rounded-xl pointer-events-none" />
                     
-                    <div className="w-full text-start z-10">
-                      <h3 className="text-[#5C1616] font-semibold text-base md:text-lg uppercase tracking-wider break-words pr-2">
-                        {review.category}
-                      </h3>
-                      <div className="h-[1px] bg-[#8B1D1D] w-full my-3 opacity-60" />
-                      <p className="text-[#5C1616]/90 text-base md:text-lg line-clamp-4 leading-relaxed">
+                    {/* --- ВЕРХНЯЯ ЧАСТЬ: ТЕКСТ ОТЗЫВА --- */}
+                    <div className="w-full text-start z-10 flex-1 flex items-center mb-4">
+                      <p className="text-[#5C1616]/90 text-base md:text-lg line-clamp-[6] leading-relaxed font-normal">
                         {review.text}
                       </p>
                     </div>
+
+                    {/* --- РАЗДЕЛИТЕЛЬ --- */}
+                    <div className="h-[1px] bg-[#8B1D1D] w-full my-4 opacity-60 z-10" />
+
+                    {/* --- НИЖНЯЯ ЧАСТЬ: АВТОР (Все в одну строчку) --- */}
+                    <div className="w-full z-10 flex items-center gap-4 text-[#5C1616]">
+                      
+                      {/* Круглый div вместо картинки */}
+                      <div className="w-14 h-14 rounded-full bg-[#D9D9D9] flex-shrink-0" />
+
+                      {/* Информационная строка с разделителями */}
+                      <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-sm md:text-base leading-tight">
+                        
+                        {/* 1. Имя и Город отправления */}
+                        <div className="flex flex-col">
+                          <span className="font-semibold text-base md:text-lg">{review.authorName}</span>
+                          <div className="flex items-center gap-1 opacity-80 text-xs md:text-sm">
+                            <LocationIcon />
+                            {review.authorCity}
+                          </div>
+                        </div>
+                        
+                        {/* Разделитель 1 */}
+                        <div className="h-8 w-[1px] bg-[#5C1616]/30 self-center" />
+
+                        {/* 2. Город назначения */}
+                        <div className="flex items-center gap-2">
+                          <BuildingIcon />
+                          <span className="font-medium">{review.targetCity}</span>
+                        </div>
+
+                        {/* Разделитель 2 */}
+                        <div className="h-8 w-[1px] bg-[#5C1616]/30 self-center" />
+
+                        {/* 3. Университет */}
+                        <div className="flex items-center gap-2">
+                          <GradCapIcon />
+                          <span className="font-medium text-xs md:text-sm max-w-[150px] sm:max-w-none truncate sm:whitespace-normal">
+                            {review.university}
+                          </span>
+                        </div>
+
+                      </div>
+                    </div>
+
                   </div>
 
                 </div>
@@ -232,6 +306,7 @@ const Testimonial = ({ data }: { data: ReviewFromPayload[] }) => {
                   ✕
                 </button>
           
+                {/* Шапка модалки */}
                 <div className="p-7 md:p-10 pb-2 md:pb-4 bg-[#FDFCF6] z-10">
                   <h3 className="text-[#5C1616] font-bold text-xl md:text-2xl pr-12 leading-snug">
                     {selectedReview.category}
@@ -249,6 +324,15 @@ const Testimonial = ({ data }: { data: ReviewFromPayload[] }) => {
                   <p className="text-[#5C1616] leading-relaxed text-base md:text-lg italic whitespace-pre-line relative z-30 w-full">
                     «{selectedReview.text}»
                   </p>
+
+                  {/* Автор в модальном окне с единой стилистикой и цветом */}
+                  <div className="mt-8 pt-6 border-t border-[#8B1D1D]/20 flex items-center gap-4 text-[#5C1616] relative z-30">
+                    <div className="w-12 h-12 rounded-full bg-[#D9D9D9] flex-shrink-0" />
+                    <div className="flex flex-col text-sm md:text-base">
+                        <span className="font-semibold">{selectedReview.authorName} ({selectedReview.authorCity})</span>
+                        <span className="opacity-95">{selectedReview.university}, {selectedReview.targetCity}</span>
+                    </div>
+                  </div>
 
                   <div className="absolute bottom-2 right-2 w-48 h-48 pointer-events-none opacity-[0.05] z-0 rotate-[-15deg]">
                      <Image src={Ornament} alt="" fill className="object-contain" />
