@@ -14,8 +14,10 @@ const ConstTabble = dynamic(() => import("@/components/sections/ConstTabble"));
 const AboutMe = dynamic(() => import("@/components/sections/AboutMe"));
 const MyExperience = dynamic(() => import("@/components/sections/MyExperience"));
 const Info = dynamic(() => import("@/components/sections/Info"));
+const CityCarousel = dynamic(() => import("@/components/sections/CityCarousel"));
 const Cities = dynamic(() => import("@/components/sections/Cities"));
 const Universities = dynamic(() => import("@/components/sections/Universities"));
+const Cases = dynamic(() => import("@/components/sections/Cases"));
 const WhyNotAgency = dynamic(() => import("@/components/sections/WhyNotAgency"));
 const FAQ = dynamic(() => import("@/components/sections/FAQ"));
 const Testimonial = dynamic(() => import('@/components/sections/Testimonial'));
@@ -45,10 +47,12 @@ export default async function Home() {
       <div id="about-me"><AboutMe /></div>
       <div id="my-experience"><MyExperience /></div>
       <div id="info"><Info /></div>
+      <div id="citycarousel"><CityCarousel /></div>
       <div id="cities"><Cities /></div>
       <div id="universities">
         <Universities data={universitiesData.docs} />
       </div>
+      <div id="сases"><Cases /></div>
       <div id="why-not-agency"><WhyNotAgency /></div>
       <div id="faq"><FAQ /></div>
       <div id="testimonial"><Testimonial data={reviewsData.docs}/></div>

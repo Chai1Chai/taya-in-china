@@ -34,19 +34,19 @@ const Cities = () => {
   return (
     <section className="relative py-16 px-4 py-20 px-4 md:px-16 lg:px-24 xl:px-32 overflow-hidden">
       <div className="absolute -bottom-30 -right-30 md:-bottom-55 md:-right-55 w-60 h-60 md:w-110 md:h-110 pointer-events-none opacity-50 z-0">
-        <Image src={Ornament} alt="" fill className="object-containt" />
+        <Image src={Ornament} alt="" fill className="object-contain" />
       </div>
 
       <div className="absolute -bottom-30 -left-30 md:-bottom-55 md:-left-55 w-60 h-60 md:w-110 md:h-110 pointer-events-none opacity-50 z-0">
-        <Image src={Ornament} alt="" fill className="object-containt" />
+        <Image src={Ornament} alt="" fill className="object-contain" />
       </div>
 
       <div className="absolute -top-30 -right-30 md:-top-55 md:-right-55 w-60 h-60 md:w-110 md:h-110 pointer-events-none opacity-50 z-0">
-        <Image src={Ornament} alt="" fill className="object-containt" />
+        <Image src={Ornament} alt="" fill className="object-contain" />
       </div>
 
       <div className="absolute -top-30 -left-30 md:-top-55 md:-left-55 w-60 h-60 md:w-110 md:h-110 pointer-events-none opacity-50 ">
-        <Image src={Ornament} alt="" fill className="object-containt" />
+        <Image src={Ornament} alt="" fill className="object-contain" />
       </div>
 
       <div className="z-30 max-w-5xl mx-auto">
