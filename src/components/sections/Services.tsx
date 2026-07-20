@@ -53,21 +53,21 @@ const Services = ({ data }: { data: ServiceItem[] }) => {
       <section className="relative bg-[#FCFDED] px-4 md:px-16 lg:px-24 xl:px-32 py-20 overflow-hidden">
         
         {/* Декоративные цветы */}
-        <div className="absolute left-0 bottom-0 w-70 h-auto z-0 pointer-events-none">
+        <div className="absolute -left-5 bottom-0 w-70 h-auto z-0 pointer-events-none">
           <Image 
             src={Flower} 
             alt="" 
-            sizes="200px" 
-            className="w-full h-auto object-contain bg-transparent -scale-x-100" 
+            sizes="220px"
+            className="w-full h-auto object-contain bg-transparent" 
           />
         </div>
 
-        <div className="absolute right-0 bottom-0 w-70 h-auto z-0 pointer-events-none">
+        <div className="absolute -right-5 bottom-0 w-70 h-auto z-0 pointer-events-none">
           <Image 
             src={Flower} 
             alt="" 
-            sizes="200px" 
-            className="w-full h-auto object-contain bg-transparent" 
+            sizes="220px"
+            className="w-full h-auto object-contain bg-transparent -scale-x-100" 
           />
         </div>
 
