@@ -20,11 +20,11 @@ const ContactBlock: React.FC = () => {
     <LazyMotion features={domAnimation}>
       <section className="font-[family-name:var(--font-montserrat)] w-full flex justify-center py-10 px-4 md:px-16 lg:px-24 xl:px-32 relative overflow-hidden">
         {/* Фоновые орнаменты */}
-        <div className="absolute -top-50 md:-top-80 -left-55 w-100 h-100 md:w-160 md:h-160 pointer-events-none opacity-50">
+        <div className="absolute top-0 md:top-0 -left-50 w-100 h-100 md:w-130 md:h-130 pointer-events-none opacity-50">
           <Image src={Ornament} alt="" fill className="object-contain" />
         </div>
 
-        <div className="absolute -bottom-50 md:-bottom-90 -right-55 w-100 h-100 md:w-160 md:h-160 pointer-events-none opacity-50">
+        <div className="absolute -bottom-20 md:-bottom-50 -right-55 w-100 h-100 md:w-130 md:h-130 pointer-events-none opacity-50">
           <Image src={Ornament} alt="" fill className="object-contain" />
         </div>
 

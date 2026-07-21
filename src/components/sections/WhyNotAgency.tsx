@@ -3,7 +3,6 @@
 import React from "react";
 import Image from "next/image";
 import { motion, Variants } from "framer-motion";
-import Ornament from '@/assets/ornament.webp';
 
 import myPhoto from '@/assets/photo.webp'; 
 import lanternIcon from '@/assets/lantern.svg';
@@ -84,13 +83,6 @@ const bottomCards: BottomCard[] = [
 const WhyNotAgency: React.FC = () => {
   return (
     <section className="relative py-16 px-4 md:px-16 lg:px-24 xl:px-32 overflow-hidden">
-      <div className="absolute -top-30 -right-30 md:-top-55 md:-right-55 w-60 h-60 md:w-110 md:h-110 pointer-events-none z-0 opacity-50">
-        <Image src={Ornament} alt="" fill className="object-containt" />
-      </div>
-
-      <div className="absolute -top-30 -left-30 md:-top-55 md:-left-55 w-60 h-60 md:w-110 md:h-110 pointer-events-none z-0 opacity-50">
-        <Image src={Ornament} alt="" fill className="object-containt" />
-      </div>
 
       <div className="relative max-w-7xl mx-auto z-10">
         

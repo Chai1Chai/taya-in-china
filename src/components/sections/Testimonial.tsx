@@ -108,8 +108,11 @@ const Testimonial = () => {
 
   return (
     <section className="relative w-full overflow-hidden">
-      {/* Ornament */}
-      <div className="absolute -bottom-50 md:-bottom-80 -left-55 w-100 h-100 md:w-160 md:h-160 pointer-events-none opacity-50 z-0">
+      <div className="absolute -top-30 -right-30 md:-top-55 md:-right-55 w-60 h-60 md:w-110 md:h-110 pointer-events-none opacity-50 z-0">
+        <Image src={Ornament} alt="" fill className="object-contain" />
+      </div>
+
+      <div className="absolute -top-30 -left-30 md:-top-55 md:-left-55 w-60 h-60 md:w-110 md:h-110 pointer-events-none opacity-50 ">
         <Image src={Ornament} alt="" fill className="object-contain" />
       </div>
 

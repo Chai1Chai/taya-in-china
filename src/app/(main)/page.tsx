@@ -52,10 +52,10 @@ export default async function Home() {
       <div id="universities">
         <Universities data={universitiesData.docs} />
       </div>
+      <div id="testimonial"><Testimonial/></div>
       <div id="сases"><Cases /></div>
       <div id="why-not-agency"><WhyNotAgency /></div>
       <div id="faq"><FAQ /></div>
-      <div id="testimonial"><Testimonial/></div>
       <div id="contact-block"><ContactBlock /></div>
       <div id="footer"><Footer /></div>
     </main>
