@@ -137,7 +137,12 @@ const ExperienceSection: React.FC = () => {
               {/* ПРАВАЯ КОЛОНКА (Выезжает справа) */}
               <div className="col-span-6 border-2 border-[#636024] rounded-[32px] p-2 bg-[#FCFDED] relative flex flex-col min-h-[600px]">
                 <div className="relative w-full h-full rounded-[24px] overflow-hidden flex-1 p-8 flex flex-col gap-5 justify-start">
-                  <Image src={MyExperienceImg} alt="Фото Шанхая" fill priority className="object-cover border-2 border-[#636024] object-center z-0 rounded-[24px]" />
+                  <Image 
+                    src={MyExperienceImg} 
+                    alt="Фото Шанхая" 
+                    fill 
+                    quality={80}
+                    className="object-cover border-2 border-[#636024] object-center z-0 rounded-[24px]" />
 
                   <m.div 
                     initial="hidden" 

@@ -21,6 +21,7 @@ return (
           loading="eager"
           className="object-cover object-center"
           sizes="100vw"
+          quality={80}
         />
       </div>
       {/* Десктопный фон */}
@@ -34,6 +35,7 @@ return (
           loading="eager"
           className="object-cover object-center"
           sizes="100vw"
+          quality={80}
         />
       </div>
       <div className="z-10 flex flex-col items-center mt-30 md:items-start max-w-xl">
@@ -76,8 +78,8 @@ return (
           priority
           fetchPriority="high" 
           loading="eager"
+          sizes="(max-width: 768px) 100vw, 600px"
           quality={75}
-          sizes="(max-width: 1024px) 320px, (max-width: 1280px) 384px, 448px"
           className="w-full h-auto aspect-[4/5] xl:aspect-auto rounded-[30px] object-cover transition-all duration-300"
         />
       </div>

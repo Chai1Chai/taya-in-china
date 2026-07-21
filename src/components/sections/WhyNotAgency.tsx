@@ -156,6 +156,7 @@ const WhyNotAgency: React.FC = () => {
                 src={myPhoto}
                 alt="Personal Photo"
                 fill
+                quality={80}
                 className="object-cover"
               />
             </div>

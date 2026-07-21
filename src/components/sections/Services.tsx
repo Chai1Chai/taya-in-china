@@ -48,6 +48,8 @@ const Services = ({ data }: { data: ServiceItem[] }) => {
             src={Flower} 
             alt="" 
             sizes="220px"
+            quality={80}
+            priority
             className="w-full h-auto object-contain bg-transparent" 
           />
         </div>
@@ -57,6 +59,8 @@ const Services = ({ data }: { data: ServiceItem[] }) => {
             src={Flower} 
             alt="" 
             sizes="220px"
+            quality={80}
+            priority
             className="w-full h-auto object-contain bg-transparent -scale-x-100" 
           />
         </div>

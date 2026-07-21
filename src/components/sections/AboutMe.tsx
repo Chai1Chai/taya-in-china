@@ -35,7 +35,6 @@ const AboutMe: React.FC = () => {
   return (
     <LazyMotion features={domAnimation}>
       <section className="relative py-20 px-4 md:px-16 lg:px-24 xl:px-32 overflow-hidden font-[family-name:var(--font-raleway)]">
-<div></div>
         {/* Фоновые элементы декора */}
         <div 
           className="hidden md:block absolute top-10 left-0 w-1/2 h-1/2 z-0 opacity-40 pointer-events-none bg-no-repeat bg-left-top bg-contain"
@@ -82,8 +81,8 @@ const AboutMe: React.FC = () => {
               <Image
                 src={Photo}
                 alt="Фото Таисии"
+                quality={80}
                 className="w-[280px] md:w-[350px] xl:w-[400px] object-cover h-auto"
-                priority
               />
             </m.div>
 

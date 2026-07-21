@@ -42,6 +42,7 @@ const ContactBlock: React.FC = () => {
             <Image
               src={photo} 
               alt="Сопровождение в поступление"
+              quality={80}
               className="w-full h-auto xl:aspect-auto rounded-[20px] object-cover transition-all duration-300"
             />
           </m.div>
@@ -58,12 +59,14 @@ const ContactBlock: React.FC = () => {
             <Image
               src={fish01}
               alt="fish"
+              quality={80}
               className="absolute hidden md:block md:-top-5 md:-left-15 md:w-60"
             />
 
             <Image
               src={fish02}
               alt="fish"
+              quality={80}
               className="absolute hidden md:block md:-top-12 md:-right-20 w-20 md:w-45"
             />
 

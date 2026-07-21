@@ -65,8 +65,8 @@ const Support: React.FC = () => {
             src={SupportImage}
             alt="Сопровождение при поступлении"
             className="w-full h-auto aspect-[4/5] xl:aspect-auto rounded-[40px] object-cover"
-            loading="lazy"
-            quality={75}
+            loading="lazy"            
+            quality={80}
           />
         </m.div>
 
