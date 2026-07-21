@@ -76,6 +76,8 @@ return (
           priority
           fetchPriority="high" 
           loading="eager"
+          quality={75}
+          sizes="(max-width: 1024px) 320px, (max-width: 1280px) 384px, 448px"
           className="w-full h-auto aspect-[4/5] xl:aspect-auto rounded-[30px] object-cover transition-all duration-300"
         />
       </div>

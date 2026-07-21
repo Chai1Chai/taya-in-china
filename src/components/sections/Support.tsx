@@ -3,7 +3,7 @@
 import React from "react";
 import Image from "next/image";
 import { LazyMotion, domAnimation, m } from "framer-motion";
-import SupportImage from "@/assets/support_img.webp";
+import SupportImage from "@/assets/IMG.webp";
 
 // Импортируем готовые анимации из твоего общего файла
 import { 
@@ -65,9 +65,8 @@ const Support: React.FC = () => {
             src={SupportImage}
             alt="Сопровождение при поступлении"
             className="w-full h-auto aspect-[4/5] xl:aspect-auto rounded-[40px] object-cover"
-            sizes="(min-width:1280px) 450px, (min-width:1024px) 350px, 100vw"
             loading="lazy"
-            quality={85}
+            quality={75}
           />
         </m.div>
 
