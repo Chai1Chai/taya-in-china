@@ -51,7 +51,7 @@ const FAQItem = ({ question, answer }: FAQItemProps) => {
             transition={{ duration: 0.3, ease: "easeInOut" }}
             className="overflow-hidden bg-white rounded-b-[10px]"
           >
-            <div className={`${commonPadding} pt-0 text-[#4A2418]/70 text-sm md:text-base leading-relaxed border-t border-gray-100 mx-5`}>
+            <div className={`${commonPadding} pt-0 text-[#4A2418]/70 text-sm md:text-base leading-relaxed border-t border-gray-100`}>
               {answer}
             </div>
           </motion.div>
