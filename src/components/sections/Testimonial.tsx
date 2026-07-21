@@ -7,17 +7,19 @@ import Ornament from "@/assets/ornament.webp";
 import { motion, AnimatePresence } from "framer-motion";
 import GreenFlowerIcon from "@/assets/greenflower.svg";
 import RedFlowerIcon from "@/assets/redflower.svg";
+import { mockReviews, Review as MockReview } from "@/assets/Data/mockReviews";
 
-// --- Иконки с цветом #5C1616 ---
+// --- Иконки ---
 const LocationIcon = () => (
   <svg width="14" height="16" viewBox="0 0 14 18" fill="none" xmlns="http://www.w3.org/2000/svg" className="flex-shrink-0">
     <path d="M7 0C3.134 0 0 3.134 0 7C0 12.25 7 18 7 18C7 18 14 12.25 14 7C14 3.134 10.866 0 7 0ZM7 9.5C5.619 9.5 4.5 8.381 4.5 7C4.5 5.619 5.619 4.5 7 4.5C8.381 4.5 9.5 5.619 9.5 7C9.5 8.381 8.381 9.5 7 9.5Z" fill="#5C1616"/>
   </svg>
 );
 
+// Новый SVG для города
 const BuildingIcon = () => (
-  <svg width="16" height="16" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" className="flex-shrink-0">
-    <path d="M16 2V16H11V10H7V16H2V2H16ZM18 0H0V18H18V0ZM13 4H15V6H13V4ZM13 7H15V9H13V7ZM13 10H15V12H13V10ZM13 13H15V15H13V13ZM3 4H5V6H3V4ZM3 7H5V9H3V7ZM3 10H5V12H3V10ZM3 13H5V15H3V13ZM8 4H10V6H8V4ZM8 7H10V9H8V7Z" fill="#5C1616"/>
+  <svg width="23" height="18" viewBox="0 0 23 18" fill="none" xmlns="http://www.w3.org/2000/svg" className="flex-shrink-0">
+    <path d="M21.75 16.5H21V5.25C21 5.05109 20.921 4.86032 20.7803 4.71967C20.6397 4.57902 20.4489 4.5 20.25 4.5H14.25C14.0511 4.5 13.8603 4.57902 13.7197 4.71967C13.579 4.86032 13.5 5.05109 13.5 5.25V9H9V0.75C9 0.551088 8.92098 0.360322 8.78033 0.21967C8.63968 0.0790178 8.44891 0 8.25 0H2.25C2.05109 0 1.86032 0.0790178 1.71967 0.21967C1.57902 0.360322 1.5 0.551088 1.5 0.75V16.5H0.75C0.551088 16.5 0.360322 16.579 0.21967 16.7197C0.0790176 16.8603 0 17.0511 0 17.25C0 17.4489 0.0790176 17.6397 0.21967 17.7803C0.360322 17.921 0.551088 18 0.75 18H21.75C21.9489 18 22.1397 17.921 22.2803 17.7803C22.421 17.6397 22.5 17.4489 22.5 17.25C22.5 17.0511 22.421 16.8603 22.2803 16.7197C22.1397 16.579 21.9489 16.5 21.75 16.5ZM15 6H19.5V16.5H15V6ZM13.5 10.5V16.5H9V10.5H13.5ZM3 1.5H7.5V16.5H3V1.5ZM6 3.75V5.25C6 5.44891 5.92098 5.63968 5.78033 5.78033C5.63968 5.92098 5.44891 6 5.25 6C5.05109 6 4.86032 5.92098 4.71967 5.78033C4.57902 5.63968 4.5 5.44891 4.5 5.25V3.75C4.5 3.55109 4.57902 3.36032 4.71967 3.21967C4.86032 3.07902 5.05109 3 5.25 3C5.44891 3 5.63968 3.07902 5.78033 3.21967C5.92098 3.36032 6 3.55109 6 3.75ZM6 8.25V9.75C6 9.94891 5.92098 10.1397 5.78033 10.2803C5.63968 10.421 5.44891 10.5 5.25 10.5C5.05109 10.5 4.86032 10.421 4.71967 10.2803C4.57902 10.1397 4.5 9.94891 4.5 9.75V8.25C4.5 8.05109 4.57902 7.86032 4.71967 7.71967C4.86032 7.57902 5.05109 7.5 5.25 7.5C5.44891 7.5 5.63968 7.57902 5.78033 7.71967C5.92098 7.86032 6 8.05109 6 8.25ZM6 12.75V14.25C6 14.4489 5.92098 14.6397 5.78033 14.7803C5.63968 14.921 5.44891 15 5.25 15C5.05109 15 4.86032 14.921 4.71967 14.7803C4.57902 14.6397 4.5 14.4489 4.5 14.25V12.75C4.5 12.5511 4.57902 12.3603 4.71967 12.2197C4.86032 12.079 5.05109 12 5.25 12C5.44891 12 5.63968 12.079 5.78033 12.2197C5.92098 12.3603 6 12.5511 6 12.75ZM10.5 14.25V12.75C10.5 12.5511 10.579 12.3603 10.7197 12.2197C10.8603 12.079 11.0511 12 11.25 12C11.4489 12 11.6397 12.079 11.7803 12.2197C11.921 12.3603 12 12.5511 12 12.75V14.25C12 14.4489 11.921 14.6397 11.7803 14.7803C11.6397 14.921 11.4489 15 11.25 15C11.0511 15 10.8603 14.921 10.7197 14.7803C10.579 14.6397 10.5 14.4489 10.5 14.25ZM16.5 14.25V12.75C16.5 12.5511 16.579 12.3603 16.7197 12.2197C16.8603 12.079 17.0511 12 17.25 12C17.4489 12 17.6397 12.079 17.7803 12.2197C17.921 12.3603 18 12.5511 18 12.75V14.25C18 14.4489 17.921 14.6397 17.7803 14.7803C17.6397 14.921 17.4489 15 17.25 15C17.0511 15 16.8603 14.921 16.7197 14.7803C16.579 14.6397 16.5 14.4489 16.5 14.25ZM16.5 9.75V8.25C16.5 8.05109 16.579 7.86032 16.7197 7.71967C16.8603 7.57902 17.0511 7.5 17.25 7.5C17.4489 7.5 17.6397 7.57902 17.7803 7.71967C17.921 7.86032 18 8.05109 18 8.25V9.75C18 9.94891 17.921 10.1397 17.7803 10.2803C17.6397 10.421 17.4489 10.5 17.25 10.5C17.0511 10.5 16.8603 10.421 16.7197 10.2803C16.579 10.1397 16.5 9.94891 16.5 9.75Z" fill="#5C0F07"/>
   </svg>
 );
 
@@ -29,21 +31,17 @@ const GradCapIcon = () => (
 );
 // -----------------------------------------------------------------
 
-type ReviewFromPayload = {
+interface ExtendedReview {
   id: string;
-  category: string;
   text: string;
-};
-
-interface ExtendedReview extends ReviewFromPayload {
   authorName: string;
   authorCity: string;
   targetCity: string;
   university: string;
+  photo?: string;
 }
 
-const Testimonial = ({ data }: { data: ReviewFromPayload[] }) => {
-  const [filter, setFilter] = useState<string>("Все");
+const Testimonial = () => {
   const [currentIndex, setCurrentIndex] = useState<number>(0);
   const [selectedReview, setSelectedReview] = useState<ExtendedReview | null>(null);
   const [isDesktop, setIsDesktop] = useState(false);
@@ -73,28 +71,19 @@ const Testimonial = ({ data }: { data: ReviewFromPayload[] }) => {
     };
   }, [selectedReview]);
 
-  const reviewsData: ExtendedReview[] = (data || []).map(review => ({
-    ...review,
-    authorName: "Анастасия",
-    authorCity: "Владивосток",
-    targetCity: "Ханджоу",
-    university: "Zhejiang University of Technology"
+  // Маппинг данных из mockReviews
+  const reviewsData: ExtendedReview[] = mockReviews.map((review: MockReview) => ({
+    id: review.id,
+    text: review.text,
+    authorName: review.name,
+    authorCity: review.cityFrom,
+    targetCity: review.cityTo,
+    university: review.university,
+    photo: review.photo
   }));
 
-  const categories = [
-    "Все",
-    "О консультации по поступлению",
-    "О сопровождении",
-    "Отзывы о подборе университетов",
-    "О стратегии поступления"
-  ];
-
-  const filteredReviews = filter === "Все"
-    ? reviewsData
-    : reviewsData.filter((r) => r.category === filter);
-
   const step = isDesktop ? 2 : 1;
-  const totalSlides = filteredReviews.length;
+  const totalSlides = reviewsData.length;
   const paginationDots = Math.ceil(totalSlides / step);
 
   const nextSlide = () => {
@@ -129,23 +118,6 @@ const Testimonial = ({ data }: { data: ReviewFromPayload[] }) => {
           Отзывы
         </h2>
 
-        <div className="flex flex-wrap gap-4 mb-10">
-          {categories.map((cat) => (
-            <button
-              key={cat}
-              onClick={() => {
-                setFilter(cat);
-                setCurrentIndex(0);
-              }}
-              className={`px-5 py-2 border border-[#5E0F08] rounded-full transition-all text-base md:text-lg ${
-                filter === cat ? "bg-[#5E0F08] text-white" : "text-[#5E0F08] hover:bg-[#8B1D1D]/10"
-              }`}
-            >
-              {cat}
-            </button>
-          ))}
-        </div>
-
         <div className="relative">
           {totalSlides > step && (
             <>
@@ -171,63 +143,75 @@ const Testimonial = ({ data }: { data: ReviewFromPayload[] }) => {
                 transform: `translateX(-${isDesktop ? (currentIndex / 2) * 102 : currentIndex * 100}%)`,
               }}
             >
-              {filteredReviews.map((review) => (
+              {reviewsData.map((review) => (
                 <div key={review.id} className="min-w-full md:min-w-[calc(50%-12px)] h-auto p-2">
                   
+                  {/* Одинаковая фиксированная высота для всех карточек */}
                   <div 
                     onClick={() => setSelectedReview(review)}
-                    className="relative cursor-pointer min-h-[280px] md:min-h-[320px] flex flex-col justify-between p-6 sm:p-8 md:p-10 bg-[#FCFDED] border-2 border-[#636024]/30 rounded-2xl shadow-sm hover:shadow-md hover:border-[#636024]/60 transition-all duration-300"
+                    className="relative cursor-pointer h-[280px] md:h-[340px] flex flex-col justify-between p-6 sm:p-8 bg-[#FCFDED] border-2 border-[#636024]/30 rounded-2xl shadow-sm hover:shadow-md hover:border-[#636024]/60 transition-all duration-300"
                   >
                     <div className="absolute inset-1.5 border border-[#636024]/10 rounded-xl pointer-events-none" />
                     
                     {/* --- ВЕРХНЯЯ ЧАСТЬ: ТЕКСТ ОТЗЫВА --- */}
-                    <div className="w-full text-start z-10 flex-1 flex items-center mb-4">
-                      <p className="text-[#5C1616]/90 text-base md:text-lg line-clamp-[6] leading-relaxed font-normal">
+                    <div className="w-full text-start z-10 flex-1 flex items-center overflow-hidden">
+                      <p className="text-[#5C1616]/90 text-base md:text-lg line-clamp-[5] md:line-clamp-[4] leading-relaxed font-normal">
                         {review.text}
                       </p>
                     </div>
 
-                    {/* --- РАЗДЕЛИТЕЛЬ --- */}
-                    <div className="h-[1px] bg-[#8B1D1D] w-full my-4 opacity-60 z-10" />
+                    {/* --- РАЗДЕЛИТЕЛЬ И НИЖНЯЯ ЧАСТЬ --- */}
+                    <div className="mt-auto z-10 w-full">
+                      <div className="h-[1px] bg-[#8B1D1D] w-full mb-4 opacity-60" />
 
-                    {/* --- НИЖНЯЯ ЧАСТЬ: АВТОР (Все в одну строчку) --- */}
-                    <div className="w-full z-10 flex items-center gap-4 text-[#5C1616]">
-                      
-                      {/* Круглый div вместо картинки */}
-                      <div className="w-14 h-14 rounded-full bg-[#D9D9D9] flex-shrink-0" />
+                      <div className="flex items-center gap-4 text-[#5C1616]">
+                        {/* Аватарка */}
+                        <div className="relative w-12 h-12 md:w-14 md:h-14 rounded-full bg-[#D9D9D9] flex-shrink-0 overflow-hidden flex items-center justify-center font-bold text-[#5C1616] text-xl border border-[#8B1D1D]/20">
+                          {review.photo ? (
+                            <Image 
+                              src={review.photo} 
+                              alt={review.authorName} 
+                              fill 
+                              className="object-cover" 
+                            />
+                          ) : (
+                            review.authorName.charAt(0)
+                          )}
+                        </div>
 
-                      {/* Информационная строка с разделителями */}
-                      <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-sm md:text-base leading-tight">
-                        
-                        {/* 1. Имя и Город отправления */}
-                        <div className="flex flex-col">
-                          <span className="font-semibold text-base md:text-lg">{review.authorName}</span>
-                          <div className="flex items-center gap-1 opacity-80 text-xs md:text-sm">
-                            <LocationIcon />
-                            {review.authorCity}
+                        {/* Информационная строка */}
+                        <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs sm:text-sm md:text-base leading-tight">
+                          
+                          {/* 1. Имя и Город отправления */}
+                          <div className="flex flex-col">
+                            <span className="font-semibold text-sm md:text-base">{review.authorName}</span>
+                            <div className="flex items-center gap-1 opacity-80 text-xs">
+                              <LocationIcon />
+                              {review.authorCity}
+                            </div>
                           </div>
+                          
+                          {/* Разделитель 1 */}
+                          <div className="h-6 md:h-8 w-[1px] bg-[#5C1616]/30 self-center" />
+
+                          {/* 2. Город назначения */}
+                          <div className="flex items-center gap-1.5">
+                            <BuildingIcon />
+                            <span className="font-medium text-xs md:text-sm">{review.targetCity}</span>
+                          </div>
+
+                          {/* Разделитель 2 */}
+                          <div className="h-6 md:h-8 w-[1px] bg-[#5C1616]/30 self-center" />
+
+                          {/* 3. Университет */}
+                          <div className="flex items-center gap-1.5">
+                            <GradCapIcon />
+                            <span className="font-medium text-xs md:text-sm max-w-[120px] sm:max-w-none  sm:whitespace-normal">
+                              {review.university}
+                            </span>
+                          </div>
+
                         </div>
-                        
-                        {/* Разделитель 1 */}
-                        <div className="h-8 w-[1px] bg-[#5C1616]/30 self-center" />
-
-                        {/* 2. Город назначения */}
-                        <div className="flex items-center gap-2">
-                          <BuildingIcon />
-                          <span className="font-medium">{review.targetCity}</span>
-                        </div>
-
-                        {/* Разделитель 2 */}
-                        <div className="h-8 w-[1px] bg-[#5C1616]/30 self-center" />
-
-                        {/* 3. Университет */}
-                        <div className="flex items-center gap-2">
-                          <GradCapIcon />
-                          <span className="font-medium text-xs md:text-sm max-w-[150px] sm:max-w-none truncate sm:whitespace-normal">
-                            {review.university}
-                          </span>
-                        </div>
-
                       </div>
                     </div>
 
@@ -258,7 +242,7 @@ const Testimonial = ({ data }: { data: ReviewFromPayload[] }) => {
                         exit={{ opacity: 0, scale: 0.5 }}
                         transition={{ duration: 0.2 }}
                       >
-                        <img src={RedFlowerIcon.src} className="w-6 h-6" alt="active" />
+                        <img src={GreenFlowerIcon.src} className="w-6 h-6" alt="active" />
                       </motion.div>
                     ) : (
                       <motion.div
@@ -269,7 +253,7 @@ const Testimonial = ({ data }: { data: ReviewFromPayload[] }) => {
                         transition={{ duration: 0.2 }}
                         className="opacity-60 hover:opacity-100 transition-opacity"
                       >
-                        <img src={GreenFlowerIcon.src} className="w-6 h-6" alt="inactive" />
+                        <img src={RedFlowerIcon.src} className="w-6 h-6" alt="inactive" />
                       </motion.div>
                     )}
                   </AnimatePresence>
@@ -279,7 +263,6 @@ const Testimonial = ({ data }: { data: ReviewFromPayload[] }) => {
           </div>
         )}
       </div>
-
 
       {mounted && createPortal(
         <AnimatePresence>
@@ -306,31 +289,34 @@ const Testimonial = ({ data }: { data: ReviewFromPayload[] }) => {
                   ✕
                 </button>
           
-                {/* Шапка модалки */}
-                <div className="p-7 md:p-10 pb-2 md:pb-4 bg-[#FDFCF6] z-10">
-                  <h3 className="text-[#5C1616] font-bold text-xl md:text-2xl pr-12 leading-snug">
-                    {selectedReview.category}
-                  </h3>
-                  <div className="h-[2px] bg-[#8B1D1D] w-14 mt-4 opacity-75" />
-                </div>
-          
                 <div 
-                  className="flex-1 overflow-y-auto px-7 md:px-10 pb-10 custom-modal-scroll relative z-20"
+                  className="flex-1 overflow-y-auto p-7 md:p-10 custom-modal-scroll relative z-20"
                   style={{
                     scrollbarWidth: 'thin',
                     scrollbarColor: '#8B1D1D rgba(139, 29, 29, 0.1)'
                   }}
                 >
-                  <p className="text-[#5C1616] leading-relaxed text-base md:text-lg italic whitespace-pre-line relative z-30 w-full">
+                  <p className="text-[#5C1616] leading-relaxed text-base md:text-lg italic whitespace-pre-line relative z-30 w-full pt-4">
                     «{selectedReview.text}»
                   </p>
 
-                  {/* Автор в модальном окне с единой стилистикой и цветом */}
+                  {/* Автор в модальном окне */}
                   <div className="mt-8 pt-6 border-t border-[#8B1D1D]/20 flex items-center gap-4 text-[#5C1616] relative z-30">
-                    <div className="w-12 h-12 rounded-full bg-[#D9D9D9] flex-shrink-0" />
+                    <div className="relative w-12 h-12 rounded-full bg-[#D9D9D9] flex-shrink-0 overflow-hidden flex items-center justify-center font-bold text-[#5C1616] text-lg border border-[#8B1D1D]/20">
+                      {selectedReview.photo ? (
+                        <Image 
+                          src={selectedReview.photo} 
+                          alt={selectedReview.authorName} 
+                          fill 
+                          className="object-cover" 
+                        />
+                      ) : (
+                        selectedReview.authorName.charAt(0)
+                      )}
+                    </div>
                     <div className="flex flex-col text-sm md:text-base">
-                        <span className="font-semibold">{selectedReview.authorName} ({selectedReview.authorCity})</span>
-                        <span className="opacity-95">{selectedReview.university}, {selectedReview.targetCity}</span>
+                      <span className="font-semibold">{selectedReview.authorName} ({selectedReview.authorCity})</span>
+                      <span className="opacity-95">{selectedReview.university}, {selectedReview.targetCity}</span>
                     </div>
                   </div>
 
