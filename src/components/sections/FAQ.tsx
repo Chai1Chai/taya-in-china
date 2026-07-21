@@ -63,15 +63,15 @@ const FAQItem = ({ question, answer }: FAQItemProps) => {
 
 const FAQ = () => {
   return (
-<section className="py-20 px-4 md:px-16 lg:px-24 xl:px-32 relative min-h-screen bg-[#636024]">
-  <div 
-    className="absolute inset-0 opacity-10 pointer-events-none z-0"
-    style={{
-      backgroundImage: `url(${Background.src})`, 
-      backgroundRepeat: 'repeat',
-      backgroundSize: '200px',
-    }}
-  />
+    <section className="py-20 px-4 md:px-16 lg:px-24 xl:px-32 relative min-h-screen bg-[#636024]">
+    <div 
+      className="absolute inset-0 opacity-10 pointer-events-none z-0"
+      style={{
+        backgroundImage: `url(${Background.src})`, 
+        backgroundRepeat: 'repeat',
+        backgroundSize: '200px',
+      }}
+    />
       <div className="relative mx-auto max-w-7xl z-5">
         <h2 className="font-[family-name:var(--font-mm9)] uppercase text-white text-4xl md:text-6xl font-medium text-center mb-16">
           Часто задаваемые вопросы
