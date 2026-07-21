@@ -59,7 +59,7 @@ const Info: React.FC = () => {
             <m.div
               key={index}
               variants={itemVariants}
-              className="bg-[#F8FBEA] p-8 lg:p-10 rounded-[30px] shadow-sm flex flex-col justify-between relative min-h-[280px]"
+              className="bg-[#F8FBEA] p-8 lg:p-10 rounded-[30px] shadow-sm flex flex-col justify-between relative min-h-[250px]"
             >
               {/* Фонарик в верхнем правом углу */}
               <div className="absolute top-2 right-6 w-15 h-15 flex items-center justify-center">
