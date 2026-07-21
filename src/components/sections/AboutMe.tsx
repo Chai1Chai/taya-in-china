@@ -13,9 +13,9 @@ import {
 } from "@/components/animations";
 
 // Импортируем новые фоновые изображения
-import RightBgAboutMe from "@/assets/RightBackground-AboutMe.webp";
-import LeftBgAboutMe from "@/assets/Leftbackground-AboutMe.webp";
-import CenterBgAboutMe from "@/assets/CenterBackground-AboutMe.webp";
+import RightBgAboutMe from "@/assets/RightBackground.webp";
+import LeftBgAboutMe from "@/assets/Leftbackground.webp";
+import CenterBgAboutMe from "@/assets/CenterBackground.webp";
 
 import Photo from "@/assets/AboutMephoto.webp";
 import Fan from "@/assets/fan.svg";

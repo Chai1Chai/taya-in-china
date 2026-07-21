@@ -99,7 +99,7 @@ const WhyNotAgency: React.FC = () => {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="font-[family-name:var(--font-mm9)] uppercase text-4xl md:text-6xl text-[#4A2418] font-base mb-12"
+          className="font-[family-name:var(--font-mm9)] uppercase text-4xl md:text-6xl text-[#60110A] font-base mb-12"
         >
           Почему не агентство?
         </motion.h2>
@@ -121,11 +121,11 @@ const WhyNotAgency: React.FC = () => {
                 <Image src={lanternRedIcon} alt="lantern" width={32} height={32} className="-mt-5 z-10" />
               </div>
 
-              <h3 className="text-[#4A2418] font-bold text-xl mb-4 pr-10 uppercase tracking-tight text-center translate-x-4">
+              <h3 className="text-[#60110A] font-bold text-xl mb-4 pr-10 uppercase tracking-tight text-center translate-x-4">
                 {card.title}
               </h3>
 
-              <p className="text-[#4A2418]/80 text-base leading-relaxed">
+              <p className="text-[#60110A]/80 text-base leading-relaxed">
                 {card.text}
               </p>
             </motion.div>
@@ -137,7 +137,7 @@ const WhyNotAgency: React.FC = () => {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="font-[family-name:var(--font-mm9)] uppercase text-4xl md:text-6xl text-[#4A2418] font-base mb-12"
+          className="font-[family-name:var(--font-mm9)] uppercase text-4xl md:text-6xl text-[#60110A] font-base mb-12"
         >
           Я предлагаю:
         </motion.h2>

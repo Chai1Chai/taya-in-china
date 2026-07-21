@@ -6,7 +6,7 @@ import Image from 'next/image';
 import { faqDataLeft, faqDataRight } from '@/assets/Data/faqData';
 
 import plusIcon from '@/assets/Plus.svg';
-import Background from '@/assets/backgroundFAQ.webp';
+import Background from '@/assets/WavesBackground.webp';
 
 interface FAQItemProps {
   question: string;
@@ -63,16 +63,16 @@ const FAQItem = ({ question, answer }: FAQItemProps) => {
 
 const FAQ = () => {
   return (
-    <section 
-      className="py-20 px-4 md:px-16 lg:px-24 xl:px-32 relative min-h-screen"
-      style={{
-        backgroundColor: '#636024', 
-        backgroundImage: `url(${Background.src})`, 
-        backgroundRepeat: 'repeat',
-        backgroundSize: '600px', 
-      }}
-    >
-      <div className="mx-auto max-w-7xl">
+<section className="py-20 px-4 md:px-16 lg:px-24 xl:px-32 relative min-h-screen bg-[#636024]">
+  <div 
+    className="absolute inset-0 opacity-10 pointer-events-none z-0"
+    style={{
+      backgroundImage: `url(${Background.src})`, 
+      backgroundRepeat: 'repeat',
+      backgroundSize: '200px',
+    }}
+  />
+      <div className="relative mx-auto max-w-7xl z-5">
         <h2 className="font-[family-name:var(--font-mm9)] uppercase text-white text-4xl md:text-6xl font-medium text-center mb-16">
           Часто задаваемые вопросы
         </h2>

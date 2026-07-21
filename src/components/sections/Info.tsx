@@ -7,7 +7,7 @@ import { LazyMotion, domAnimation, m } from "framer-motion";
 // Импортируем готовые анимации
 import { containerVariants, itemVariants } from "@/components/animations";
 
-import Background from '@/assets/backgroundFAQ.webp';
+import Background from '@/assets/WavesBackground.webp';
 import lanternRedIcon from '@/assets/lanternRed.svg';
 
 type StatCard = {
@@ -38,14 +38,15 @@ const Info: React.FC = () => {
   return (
     <LazyMotion features={domAnimation}>
       <section 
-        className="font-[family-name:var(--font-montserrat)] w-full flex justify-center items-center py-20 px-4 md:px-16 lg:px-24 xl:px-32 relative overflow-hidden min-h-[450px]"
-        style={{
-          backgroundColor: '#636024', 
-          backgroundImage: `url(${Background.src})`, 
-          backgroundRepeat: 'repeat',
-          backgroundSize: '600px', 
-        }}
-      >
+        className="font-[family-name:var(--font-montserrat)] w-full flex justify-center items-center py-20 px-4 md:px-16 lg:px-24 xl:px-32 relative overflow-hidden min-h-[450px] bg-[#636024]">
+        <div 
+          className="absolute inset-0 opacity-10 pointer-events-none z-0"
+          style={{
+            backgroundImage: `url(${Background.src})`, 
+            backgroundRepeat: 'repeat',
+            backgroundSize: '200px',
+          }}
+        />
         {/* Контейнер для сетки карточек */}
         <m.div 
           variants={containerVariants}

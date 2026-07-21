@@ -16,21 +16,11 @@ import Flower from "@/assets/Flower.webp";
 import Gates from "@/assets/Gates.svg";
 import TeaPot from "@/assets/TeaPot.svg";
 import Scroll from "@/assets/Scroll.svg";
-import Gong from "@/assets/Gong.svg";
-import BaGua from "@/assets/BaGua.svg";
-import Noodles from "@/assets/Noodles.svg";
-import Drum from "@/assets/Drum.svg";
-import Sage from "@/assets/Sage.svg";
 
 const icons = {
   Gates,
   TeaPot,
-  Scroll,
-  Gong,   
-  BaGua,  
-  Noodles,
-  Drum,   
-  Sage,   
+  Scroll,   
 };
 
 type ServiceItem = {

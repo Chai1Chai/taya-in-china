@@ -50,7 +50,7 @@ const MarqueeRow: React.FC<MarqueeRowProps> = ({ cities, direction, speed = 45 }
                 className="object-cover w-full h-full"
               />
             </div>
-            <span className="font-[family-name:var(--font-montserrat)] text-[#636024] font-medium text-base md:text-lg font-serif">
+            <span className="font-[family-name:var(--font-montserrat)] text-[#636024] font-light text-base md:text-lg">
               {city.name}
             </span>
           </div>
