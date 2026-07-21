@@ -166,8 +166,7 @@ const Universities = ({ data }: { data: UniversityFromPayload[] }) => {
                       alt={uni.name} 
                       fill 
                       className="object-cover"
-                      // ОПТИМИЗАЦИЯ: Указываем точные брейкпоинты для сетки карточек
-                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 400px"
+                      sizes="(max-width: 768px) 100vw, 33vw"
                     />
                   </div>
                   <div className="p-6 md:p-8 flex flex-col items-center text-center flex-grow">
@@ -187,7 +186,8 @@ const Universities = ({ data }: { data: UniversityFromPayload[] }) => {
         {totalPages > 1 && (
           <div className="hidden md:flex justify-center mt-10 gap-4 items-center">
             {Array.from({ length: totalPages }).map((_, idx) => (
-              <button
+
+          <button
                 key={idx}
                 onClick={() => scrollToPage(idx)}
                 className="focus:outline-none transition-transform active:scale-90"
