@@ -3,7 +3,7 @@
 import React from "react";
 import Image from "next/image";
 import { LazyMotion, domAnimation, m } from "framer-motion";
-import SupportImage from "@/assets/IMG.webp";
+import SupportImage from "@/assets/support_img.webp";
 
 // Импортируем готовые анимации из твоего общего файла
 import { 
