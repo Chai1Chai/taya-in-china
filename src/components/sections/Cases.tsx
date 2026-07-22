@@ -115,7 +115,7 @@ const Cases = () => {
         />
       <div className="relative mx-auto max-w-7xl w-full z-5">
         <h2 className="font-[family-name:var(--font-mm9)] uppercase text-white text-4xl md:text-6xl font-medium text-center mb-16">
-          Не бросаем в сложных ситуациях
+          Не бросаю в сложных ситуациях
         </h2>
 
         <div className="grid grid-cols-1 xl:grid-cols-2 gap-x-8 items-start">

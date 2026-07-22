@@ -169,7 +169,7 @@ const Testimonial = () => {
 
                       <div className="flex items-center gap-4 text-[#5C1616]">
                         {/* Аватарка */}
-                        <div className="relative w-12 h-12 md:w-14 md:h-14 rounded-full bg-[#D9D9D9] flex-shrink-0 overflow-hidden flex items-center justify-center font-bold text-[#5C1616] text-xl border border-[#8B1D1D]/20">
+                        <div className="relative w-12 h-12 md:w-14 md:h-14 rounded-full bg-[#636024] flex-shrink-0 overflow-hidden flex items-center justify-center font-bold text-white text-xl border border-[#8B1D1D]/20">
                           {review.photo ? (
                             <Image 
                               src={review.photo} 
@@ -305,7 +305,7 @@ const Testimonial = () => {
 
                   {/* Автор в модальном окне */}
                   <div className="mt-8 pt-6 border-t border-[#8B1D1D]/20 flex items-center gap-4 text-[#5C1616] relative z-30">
-                    <div className="relative w-12 h-12 rounded-full bg-[#D9D9D9] flex-shrink-0 overflow-hidden flex items-center justify-center font-bold text-[#5C1616] text-lg border border-[#8B1D1D]/20">
+                    <div className="relative w-12 h-12 rounded-full bg-[#636024] flex-shrink-0 overflow-hidden flex items-center justify-center font-bold text-white text-lg border border-[#8B1D1D]/20">
                       {selectedReview.photo ? (
                         <Image 
                           src={selectedReview.photo} 
